@@ -7,6 +7,9 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import createError from "http-errors";
 
+// Required Module Files
+let {mongoose} = require('./db/mongoose');
+
 let app = express();
 
 // view engine setup
