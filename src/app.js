@@ -22,6 +22,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+// make admin-lte dependencies (packages) inside node_modules static and accessible
+app.use(
+    "/script-adminlte",
+    express.static(path.join(__dirname, "../node_modules/admin-lte/"))
+);
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

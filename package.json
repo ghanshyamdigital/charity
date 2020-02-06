@@ -13,6 +13,7 @@
     "watch": "nodemon"
   },
   "dependencies": {
+    "admin-lte": "^3.0.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
