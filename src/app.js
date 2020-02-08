@@ -2,6 +2,7 @@ import express from "express";
 
 import usersRouter from "./routes/users";
 import indexRouter from "./routes";
+import bannerRouter from "./routes/banner";
 import logger from "morgan";
 import cookieParser from "cookie-parser";
 import path from "path";
@@ -30,6 +31,7 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/banners', bannerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
