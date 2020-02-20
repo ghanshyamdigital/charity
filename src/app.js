@@ -4,6 +4,7 @@ import usersRouter from "./routes/users";
 import indexRouter from "./routes";
 import bannerRouter from "./routes/banner";
 import newsRouter from "./routes/news";
+import volunteerRouter from "./routes/volunteer";
 import logger from "morgan";
 import cookieParser from "cookie-parser";
 import path from "path";
@@ -34,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/banners', bannerRouter);
 app.use('/news',newsRouter);
+app.use('/volunteers',volunteerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

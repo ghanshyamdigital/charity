@@ -1,0 +1,90 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Add Volunteer</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">join volunteer</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Join Volunteer <small>Add</small></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form role="form" id="addBannerForm">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name-join">Name<span>*</span></label>
+                                <input type="text" class="form-control" name="name" id="name-join" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="last-name-join">Last Name<span>*</span></label>
+                                    <input type="text" class="form-control" name="last_name" id="last-name-join" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group ">
+                                    <label for="email-join">Email<span>*</span></label>
+                                    <input type="text" class="form-control" name="email" id="email-join" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Residence Proof</label>
+                                <select class="form-control select2"  name="rpf" style="width: 100%;">
+                                    <option selected="selected">Aadhar Card</option>
+                                    <option>Pancard</option>
+                                    <option>Driving Licence</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="phone-join">Phone<span>*</span></label>
+                                    <input type="text" class="form-control" name="phno" id="phone-join" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-join">Why you join volunteer<span>*</span></label>
+                                <textarea class="form-control" id="message-join"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <a href="volunteer-form.ejs"> <button type="submit" class="btn btn-primary">Submit</button></a>
+                        </div>
+
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+
+
