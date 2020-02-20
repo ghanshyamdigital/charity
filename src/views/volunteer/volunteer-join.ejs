@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ../layout/header.ejs %>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+
+<div class="wrapper">
+    <%- include ../layout/navigation.ejs %>
+    <%- include ../layout/sidebar.ejs %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <%- include volunteer-form.ejs %>
+    </div>
+    <%- include ../layout/footer.ejs %>
+    <%- include ../layout/control-sidebar.ejs %>
+</div>
+
+<!-- ./wrapper -->
+<%- include ../layout/js.ejs %>
+<!-- bs-custom-file-input -->
+<script src="/script-adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
+</body>
+</html>
