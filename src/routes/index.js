@@ -8,10 +8,15 @@ import userController from '../controllers/users.controller'
 //   res.render('index', { title: 'Express' });
 // });
 router.get("/login", function(req, res, next) {
-  res.render("login");
+  if(req.cookies.token){
+    res.redirect('/dashboard')
+    }else{  res.render("login");}
 });
 router.get("/", function(req, res, next) {
   res.redirect("/login");
+});
+router.get("/register", function(req, res, next) {
+  res.render("register");
 });
 router.get("/dashboard", function(req, res, next) {
     res.render('dashboard')

@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import createError from "http-errors";
 import jwt from './helper/jwt'
+import { UnauthorizedError } from "express-jwt/lib";
 
 // Required Module Files
 let {mongoose} = require('./db/mongoose');
@@ -44,6 +45,11 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+
+  if(err instanceof UnauthorizedError){
+    res.redirect('/login');
+    return;
+  }
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

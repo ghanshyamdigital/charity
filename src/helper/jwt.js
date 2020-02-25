@@ -31,7 +31,6 @@ async function isRevoked (req, payload, done) {
 }
 
 const getToken = (req) => {
-  // console.log(req.cookies.token)
   return req.cookies.token;
 };
 

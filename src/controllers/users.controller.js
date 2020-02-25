@@ -54,7 +54,7 @@ controller.addUser = async (req, res) => {
         const user = await User.getUserByEmail(userToAdd.email);
 
         if (user) {
-            return res.status(400).send({email: 'Email "' + user.email + '" is already taken.'})
+            return res.status(400).alert({email: 'Email "' + user.email + '" is already taken.'})
         }
 
         const userByName = await User.getUserByName(userToAdd.username);
@@ -63,8 +63,8 @@ controller.addUser = async (req, res) => {
         }
 
         const savedUser = await User.addUser(userToAdd, req.body.password);
-        console.log('Adding user...');
-        res.send(savedUser)
+        console.log('Adding user...',savedUser);
+        res.redirect(302, '/login');
 
     } catch (err) {
     console.error(`Error in adding user- ${err}`);
