@@ -24,7 +24,7 @@ router.post('/', (req, res, next) => {
     email: req.body.email,
     password: req.body.password
   });
-  User.save().then((doc) => {
+User.save().then((doc) => { 
     res.send(doc);
   }, (e) => {
     res.status(400).send(e)

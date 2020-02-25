@@ -5,7 +5,7 @@ import {Banners} from "./../models/admin/banner";
 let router = express.Router();
 
 // Get All Banner Data
-router.get('/', (req, res) => {
+router.get('    /', (req, res) => {
     console.log('users');
     Banners.find({})
         .then((data)=>{
@@ -23,7 +23,7 @@ router.get('/add', (req, res) => {
 });
 
 // Add New Banner Data
-router.post('/', (req, res, next) => {
+router.post('/addBanner', (req, res, next) => {
 
     let Banner = new Banners({
         title: req.body.title,
