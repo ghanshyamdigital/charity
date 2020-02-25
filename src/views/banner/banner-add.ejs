@@ -22,54 +22,6 @@
 <%- include ../layout/js.ejs %>
 <!-- bs-custom-file-input -->
 <script src="/script-adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        bsCustomFileInput.init();
-        $.validator.setDefaults({
-            submitHandler: function () {
-                alert( "Form successful submitted!" );
-            }
-        });
-        $('#addBannerForm').validate({
-            rules: {
-                title: {
-                    required: true,
-                    minlength: 5
-                },
-                text: {
-                    required: true,
-                    minlength: 5
-                },
-                bannerImage: {
-                    required: true
-                },
-            },
-            messages: {
-                title: {
-                    required: "Please enter a title",
-                    minlength: "Your title must be at least 5 characters long"
-                },
-                text: {
-                    required: "Please provide a text",
-                    minlength: "Your text must be at least 5 characters long"
-                },
-                bannerImage: {
-                    required: "Please select a banner image",
-                },
-            },
-            errorElement: 'span',
-            errorPlacement: function (error, element) {
-                error.addClass('invalid-feedback');
-                element.closest('.form-group').append(error);
-            },
-            highlight: function (element, errorClass, validClass) {
-                $(element).addClass('is-invalid');
-            },
-            unhighlight: function (element, errorClass, validClass) {
-                $(element).removeClass('is-invalid');
-            }
-        });
-    });
-</script>
+
 </body>
 </html>

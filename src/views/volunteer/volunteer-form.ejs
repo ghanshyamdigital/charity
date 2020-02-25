@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Add Volunteer</h1>
+                <h1><%= title %></h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">join volunteer</li>
+                    <li class="breadcrumb-item active"><%= title%></li>
                 </ol>
             </div>
         </div>
@@ -24,45 +24,53 @@
                 <!-- jquery validation -->
                 <div class="card card-secondary">
                     <div class="card-header">
-                        <h3 class="card-title">Join Volunteer <small>Add</small></h3>
+                        <h3 class="card-title">Volunteer Details<small></small></h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form" id="addBannerForm">
+                    <form role="form"  method="post">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name-join">Name<span>*</span></label>
-                                <input type="text" class="form-control" name="name" id="name-join" required>
+                                <input type="text" class="form-control" value="<%= records.first_name%>" name="name" id="name-join" required>
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="last-name-join">Last Name<span>*</span></label>
-                                    <input type="text" class="form-control" name="last_name" id="last-name-join" required>
+                                    <input type="text" class="form-control" value="<%= records.last_name%>" name="last_name" id="last-name-join" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-group ">
                                     <label for="email-join">Email<span>*</span></label>
-                                    <input type="text" class="form-control" name="email" id="email-join" required>
+                                    <input type="text" value="<%= records.email%>" class="form-control" name="email" id="email-join" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Residence Proof</label>
-                                <select class="form-control select2"  name="rpf" style="width: 100%;">
-                                    <option selected="selected">Aadhar Card</option>
-                                    <option>Pancard</option>
-                                    <option>Driving Licence</option>
+                                <select  id="proof" class="form-control select2"  name="residence_proof" style="width: 100%;">
+                                    <option selected="true" value="aadharcard">Aadhar card</option>
+                                    <option value="pancard">Pancard</option>
+                                    <option value="driving">Driving Licence</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="phone-join">Phone<span>*</span></label>
-                                    <input type="text" class="form-control" name="phno" id="phone-join" required>
+                                    <input type="text" value="<%= records.phone_number%>" class="form-control" name="phone" id="phone-join" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="message-join">Why you join volunteer<span>*</span></label>
-                                <textarea class="form-control" id="message-join"></textarea>
+                                <label for="exampleInputFile">Image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" value="<%= records.image%>" name="image" id="image">
+                                        <label class="custom-file-label" for="image"><%= records.image%></label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="">Upload</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

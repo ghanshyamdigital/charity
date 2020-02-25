@@ -12,9 +12,7 @@
     <%- include ../layout/sidebar.ejs %>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <%- include banner-list-content.ejs %>
-
-
+        <%- include news-list-form.ejs %>
     </div>
     <%- include ../layout/footer.ejs %>
     <%- include ../layout/control-sidebar.ejs %>
@@ -24,11 +22,6 @@
 <%- include ../layout/js.ejs %>
 
 <!-- page script -->
-<script>
-    $(function () {
-        $("#banner-list").DataTable();
-    });
-</script>
 
 </body>
 </html>
