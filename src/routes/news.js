@@ -1,13 +1,22 @@
 import express from "express";
 import {news, Newss} from "../models/admin/news";
-import {Volunteers} from "../models/admin/volunteer";
-import {Banners} from "../models/admin/banner";
-// import {Banners} from "../models/admin/banner";
+import multer from "multer";
+import path from "path";
 
 let router = express.Router();
 
-router.get('/',(req,res)=>{
+let Storage= multer.diskStorage({
+    destination:"./public/uploads/",
+    filename:(req,file,cb)=>{
+        cb(null,file.fieldname+"_"+file.originalname+"_"+path.extname(file.originalname));
+    }
+});
 
+let upload = multer({
+    storage:Storage
+}).single('newsImage');
+
+router.get('/',(req,res)=>{
     Newss.find({})
         .then((data)=>{
             const dataObject = data
@@ -17,25 +26,25 @@ router.get('/',(req,res)=>{
         .catch((err)=>{
             console.log(err)
         })
-    // res.render('news/news');
 });
-router.get('/add', (req, res) => {
 
+router.get('/add', (req, res) => {
     res.render('news/news-list',{ "title":"Add News","records":"" });
 });
-router.post('/add', (req, res) => {
 
+router.post('/add',upload, (req, res) => {
     let News = new Newss({
         title: req.body.title,
         description: req.body.description,
-        image: req.body.newsImage
+        image: req.file.filename,
     });
     News.save().then((data) => {
-        res.render('news/news-list',{ "title":"Add News","records":data });
+        res.redirect('/news');
     }, (e) => {
         res.status(400).send(e)
     });
 });
+
 router.get('/delete/:id', (req, res) => {
     console.log("paramsId",req.params._id)
     Newss.findByIdAndRemove(
@@ -44,7 +53,7 @@ router.get('/delete/:id', (req, res) => {
         (err, banner) => {
             // Handle any possible database errors
             if (err) return res.status(500).send(err);
-            return res.redirect('/news/')
+            return res.redirect('/news')
         }
     )
 });
@@ -56,31 +65,27 @@ router.get('/edit/:id', function(req, res, next) {
         if(err) throw err;
         res.render('news/news-list', { "title":"Edit News","records":data });
     });
-
 });
-router.post('/edit/:id', function(req, res, next) {
+
+router.post('/edit/:id',upload, function(req, res, next) {
     var id=req.params.id;
-    if(req.body.image){
+    if(req.file){
         var dataRecords={
             title: req.body.title,
             description: req.body.description,
-            image: req.body.image,
+            image: req.file.filename,
         }
     } else{
         var dataRecords={
             title: req.body.title,
             description: req.body.description,
-
-            // text: req.body.,
-            // image: req.body.bannerImage,
         }
     }
     var edit= Newss.findByIdAndUpdate(id,dataRecords);
     edit.exec(function(err,data){
         if(err) throw err;
-        res.render('news/news-list', { "title":"Edit News","records":data });
+        res.redirect('/news');
     });
-
 });
 
 export default router;

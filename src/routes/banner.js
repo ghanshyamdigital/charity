@@ -1,12 +1,24 @@
 import express from "express";
-
+import multer from "multer";
+import path from "path";
 import {Banners} from "./../models/admin/banner";
 
 let router = express.Router();
 
+let Storage= multer.diskStorage({
+    destination:"./public/uploads/",
+    filename:(req,file,cb)=>{
+        console.log(file    )
+
+        cb(null,file.fieldname+"_"+file.originalname+"_"+path.extname(file.originalname));
+    }
+});
+
+let upload = multer({
+    storage:Storage
+}).single('bannerImage');
 // Get All Banner Data
 router.get('/', (req, res) => {
-    console.log("heloooooooooooooo")
     Banners.find({})
         .then((data)=>{
             const dataObject = data
@@ -22,28 +34,21 @@ router.get('/', (req, res) => {
 // Get All Banner Data
 router.get('/add', (req, res) => {
     console.log('users');
-    // Banners.find({})
-    //     .then((data)=>{
-    //         const dataObject = data
-    //         console.log('list banner',dataObject)
+
             res.render('banner/banner-add',{"title":"Add Banner","records":''})
-        // })
-        // .catch((err)=>{
-        //     console.log(err)
-        // })
 
 });
 
 // Add New Banner Data
-router.post('/add', (req, res, next) => {
+router.post('/add',upload, (req, res, next) => {
 
     let Banner = new Banners({
         title: req.body.title,
         text: req.body.text,
-        image: req.body.bannerImage,
+        image: req.file.filename,
     });
     Banner.save().then((data) => {
-        res.render('banner/banner-add',{"title":"Add Banner","records":""});
+        res.redirect('/banners');
     }, (e) => {
         res.status(400).send(e)
     });
@@ -85,30 +90,30 @@ router.get('/edit/:id', function(req, res, next) {
     });
 
 });
-router.post('/edit/:id', function(req, res, next) {
+router.post('/edit/:id',upload, function(req, res, next) {
     var id=req.params.id;
-    if(req.body.bannerImage){
+    if(req.file){
         var dataRecords={
             title: req.body.title,
             text: req.body.text,
-            image: req.body.bannerImage,
+            image: req.file.filename,
         }
     } else{
     var dataRecords={
         title: req.body.title,
         text: req.body.text,
-        // image: req.body.bannerImage,
     }
     }
     var edit= Banners.findByIdAndUpdate(id,dataRecords);
     edit.exec(function(err,data){
         if(err) throw err;
-        res.render('banner/banner-add', { "title":"Edit Banner","records":data });
+        res.redirect('/banners');
     });
 
 });
 //Delete Single Banner Data
 router.get('/delete/:id', (req, res) => {
+
     console.log("paramsId",req.params._id)
     Banners.findByIdAndRemove(
         req.params.id,
@@ -116,7 +121,7 @@ router.get('/delete/:id', (req, res) => {
         (err, banner) => {
             // Handle any possible database errors
             if (err) return res.status(500).send(err);
-            return res.redirect('/banners/')
+            return res.redirect('/banners')
         }
     )
 });

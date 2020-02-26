@@ -18,7 +18,6 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Image</th>
-                <!--                <th>Date</th>-->
                 <th>Action</th>
             </tr>
             </thead>
@@ -28,15 +27,11 @@
                     <tr>
                         <td><%= row.title %></td>
                         <td><%= row.description %></td>
-                        <td><%= row.image %></td>
-                        <!--                        <td><%= row.hourlyrate %></td>-->
-                        <!--                        <td><%= row.totalHour %></td>-->
-                        <!--                        <td><%= row.total %></td>-->
-                        <!--                        <td>-->
-                        <!--                            <% if(row.image){ %>-->
-                        <!--                                <img src="./uploads/<%= row.image %>" alt="profile image" width="80">-->
-                        <!--                            <% } %>-->
-                        <!--                        </td>-->
+                        <td>
+                        <% if(row.image){ %>
+                            <img src="./uploads/<%= row.image %>" alt="profile image" width="80">
+                        <% } %>
+                        </td>
                         <td><a class="btn btn-primary btn-xs" href="/news/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-danger btn-xs" href="/news/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
                         </td>

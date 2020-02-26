@@ -28,36 +28,43 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form role="form"  method="post">
+                    <form role="form" enctype="multipart/form-data"  id="addVolunteerForm" method="post">
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name-join">Name<span>*</span></label>
-                                <input type="text" class="form-control" value="<%= records.first_name%>" name="name" id="name-join" required>
+                                <input type="text" class="form-control" value="<%= records.first_name%>" name="name" id="name" required>
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="last-name-join">Last Name<span>*</span></label>
-                                    <input type="text" class="form-control" value="<%= records.last_name%>" name="last_name" id="last-name-join" required>
+                                    <input type="text" class="form-control" value="<%= records.last_name%>" name="last_name" id="lastname" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-group ">
                                     <label for="email-join">Email<span>*</span></label>
-                                    <input type="text" value="<%= records.email%>" class="form-control" name="email" id="email-join" required>
+                                    <input type="email" value="<%= records.email%>" class="form-control" name="email" id="email" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>Residence Proof</label>
                                 <select  id="proof" class="form-control select2"  name="residence_proof" style="width: 100%;">
-                                    <option selected="true" value="aadharcard">Aadhar card</option>
-                                    <option value="pancard">Pancard</option>
-                                    <option value="driving">Driving Licence</option>
+                                    <optgroup label="Select Residence Proof">
+                                        <option name="" value="0">Select Residence Proof</option>
+                                        <% if(proof.length > 0 && records != null){
+                                          var optionData = records.residence_proof
+                                        proof.forEach(function(row){
+                                         var selected = (row.value === optionData )? "selected":""
+                                        %>
+                                            <option value="<%= row.value %>"  <%= selected %>><%= row.title %></option>
+                                        <%  }) } %>
+                                    </optgroup>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="phone-join">Phone<span>*</span></label>
-                                    <input type="text" value="<%= records.phone_number%>" class="form-control" name="phone" id="phone-join" required>
+                                    <input type="tel"pattern="^\d{10}$" maxlength="10" value="<%= records.phone_number%>" class="form-control" name="phone" id="phone" required>
                                 </div>
                             </div>
                             <div class="form-group">
