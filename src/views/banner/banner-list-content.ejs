@@ -27,8 +27,8 @@
                     <tr>
                         <td>
                         <% if(row.image){ %>
-                                                        <img src="./uploads/<%= row.image %>" alt="profile image" width="80">
-                                                    <% } %></td>
+                   <img src="./uploads/<%= row.image %>" alt="profile image" width="80">
+                            <% } %></td>
                         <td><%= row.title %></td>
                         <td><%= row.text %></td>
                         <td><a class="btn btn-primary btn-xs" href="/banners/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>

@@ -49,6 +49,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <% if(records.image){ %>
+                                <img src="../../uploads/<%= records.image %>" alt="profile image" width="80">
+                            <% } %>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
