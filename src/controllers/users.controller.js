@@ -9,13 +9,14 @@ const bcrypt = require('bcryptjs');
 const controller = {}
  
 controller.authenticate = async (req, res) => {
+console.log(req.body.email);
 
     try {
-        const user = await User.getUserByEmail(req.body.email) || await User.getUserByName(req.body.email);
+        const user = await User.getUserByEmail(req.body.email) ;
         console.log("userData",user);
         
         if (user === null) {
-            return res.status(400).send({email: 'Email or Username is not found.'})
+            return res.render("login", {msg: "invalid username and password."})
         }
 
         if (user && bcrypt.compareSync(req.body.password, user.hash)) {
@@ -27,9 +28,11 @@ controller.authenticate = async (req, res) => {
                 secure: false, // set to true if your using https
                 httpOnly: true,
               });
+              console.log("cookies",res.cookie);
+              
             res.redirect(302, '/dashboard');
         } else {
-            return res.status(400).send({password: 'Password is incorrect.'})
+            return res.render("login", {msg: "invalid password."})
         }
 
     } catch (err) {
@@ -54,7 +57,7 @@ controller.addUser = async (req, res) => {
         const user = await User.getUserByEmail(userToAdd.email);
 
         if (user) {
-            return res.status(400).alert({email: 'Email "' + user.email + '" is already taken.'})
+            return res.status(400).send({email: 'Email "' + user.email + '" is already taken.'})
         }
 
         const userByName = await User.getUserByName(userToAdd.username);
