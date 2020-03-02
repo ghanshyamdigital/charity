@@ -12,16 +12,7 @@ router.get("/login", function(req, res, next) {
     }else{  res.render("login",{msg:''});}
 });
 
-router.get("/", function(req, res, next) {
-  console.log('sdfgsg');
-  Banners.countDocuments({}).exec((err,count)=>{
-    Newss.countDocuments({}).exec((err,count_list)=>{
-      Volunteers.countDocuments({}).exec((err,count_vol)=>{
-        res.render("dashboard",{Banners_list:count, Newss_list:count_list,Volunteers_list:count_vol});
-      });
-    });
-  });
-});
+
 
 router.get("/register", function(req, res, next) {
   res.render("register");
