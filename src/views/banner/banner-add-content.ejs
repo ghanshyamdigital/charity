@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/banners"> Banner List</a></li>
                         <li class="breadcrumb-item active"><%= title%></li>
                     </ol>
                 </div>
@@ -44,12 +44,19 @@
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" value="<%= records.image%>" name="bannerImage" id="banner-image">
                                             <label class="custom-file-label" for="banner-image"><%= records.image%></label>
+
+
                                         </div>
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="">Upload</span>
                                         </div>
+
                                     </div>
                                 </div>
+                                <% if(records.image){ %>
+                                    <img src="../../uploads/<%= records.image %>" alt="profile image" width="80">
+                                <% } %>
+<!--                                <img src="../../../public/uploads<%= records.image %>" alt="profile image" width="80">-->
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">
