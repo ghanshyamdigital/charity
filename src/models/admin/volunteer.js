@@ -11,6 +11,15 @@ const volunteerSchema = new Schema({
     email: {
         type: String,
     },
+    residence_proof:{
+        type: String,
+    },
+    phone_number:{
+        type:Number,
+    },
+    image: {
+        type: String,
+    },
     isVisible: { type: Boolean, default: true },
     date: { type: Date, default: Date.now },
 });

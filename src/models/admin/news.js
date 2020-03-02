@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 let Schema = mongoose.Schema;
 
-const bannerSchema = new Schema({
+const newsSchema = new Schema({
     title: {
         type: String,
         // required: [true, 'Why no title?']
     },
-    text: {
+    description: {
         type: String,
         // required: [true, 'Why no text?']
     },
@@ -18,6 +18,6 @@ const bannerSchema = new Schema({
     date: { type: Date, default: Date.now },
 });
 
-const Banners = mongoose.model('Banners', bannerSchema );
+const Newss = mongoose.model('News', newsSchema );
 
-export {Banners};
+export {Newss};
