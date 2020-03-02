@@ -10,7 +10,7 @@ let Storage= multer.diskStorage({
     filename:(req,file,cb)=>{
         console.log(file    )
 
-        cb(null,file.fieldname+"_"+file.originalname+"_"+path.extname(file.originalname));
+        cb(null,file.fieldname+"_"+Date.now()+"_"+path.extname(file.originalname));
     }
 });
 
@@ -19,6 +19,7 @@ let upload = multer({
 }).single('bannerImage');
 // Get All Banner Data
 router.get('/', (req, res) => {
+    console.log('users');
     Banners.find({})
         .then((data)=>{
             const dataObject = data
@@ -28,7 +29,6 @@ router.get('/', (req, res) => {
         .catch((err)=>{
             console.log(err)
         })
-    // res.render('banner/banners')
 });
 
 // Get All Banner Data
@@ -85,6 +85,7 @@ router.get('/edit/:id', function(req, res, next) {
     var id=req.params.id;
     var edit= Banners.findById(id);
     edit.exec(function(err,data){
+        console.log("editdata",data);
         if(err) throw err;
         res.render('banner/banner-add', { "title":"Edit Banner","records":data });
     });

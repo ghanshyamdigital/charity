@@ -1,5 +1,5 @@
 import express from "express";
-import {news, Newss} from "../models/admin/news";
+import {news,Newss} from "../models/admin/news";
 import multer from "multer";
 import path from "path";
 
