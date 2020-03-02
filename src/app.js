@@ -16,11 +16,10 @@ let {mongoose} = require('./db/mongoose');
 let app = express();
 
 // view engine setup
+app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(cookieParser());
 console.log(cookieParser())
-app.use(jwt());
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -33,7 +32,7 @@ app.use(
     "/script-adminlte",
     express.static(path.join(__dirname, "../node_modules/admin-lte/"))
 );
-
+app.use(jwt());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/banners', bannerRouter);
@@ -45,7 +44,6 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-
   if(err instanceof UnauthorizedError){
     res.redirect('/login');
     return;
