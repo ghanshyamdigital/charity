@@ -12,179 +12,40 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="banner-list" class="table table-bordered table-striped">
+        <table id="volunteer-list" class="table table-bordered table-striped">
             <thead>
             <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Residence Proof</th>
+                <th>Phone</th>
                 <th>Image</th>
-                <th>Title</th>
-                <th>Text</th>
-                <th>Date</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Trident</td>
-                <td>Internet
-                    Explorer 4.0
-                </td>
-                <td>Win 95+</td>
-                <td>X</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>Internet
-                    Explorer 5.0
-                </td>
-                <td>Win 95+</td>
-                <td>C</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>Internet
-                    Explorer 5.5
-                </td>
-                <td>Win 95+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>Internet
-                    Explorer 6
-                </td>
-                <td>Win 98+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>Internet Explorer 7</td>
-                <td>Win XP SP2+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Trident</td>
-                <td>AOL browser (AOL desktop)</td>
-                <td>Win XP</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Gecko</td>
-                <td>Firefox 1.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Gecko</td>
-                <td>Firefox 1.5</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Gecko</td>
-                <td>Firefox 2.0</td>
-                <td>Win 98+ / OSX.2+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Gecko</td>
-                <td>Firefox 3.0</td>
-                <td>Win 2k+ / OSX.3+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>Gecko</td>
-                <td>Camino 1.0</td>
-                <td>OSX.2+</td>
-                <td>A</td>
-                <td>
-                    <button type="button" class="btn btn-warning">
-                        <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </button>
-                </td>
-            </tr>
+            <%if (data.length >0){ %>
+                <% data.forEach(function(row){ %>
+                    <tr>
+                        <td><%= row.first_name %></td>
+                        <td> <%= row.last_name %></td>
+                        <td><%= row.email %></td>
+                        <td><%= row.residence_proof %></td>
+                        <td><%= row.phone_number %></td>
+                        <td><% if(row.image){ %>
+                        <img src="./uploads/<%= row.image %>" alt="profile image" width="80">
+                        <% } %></td>
+                        <td><a class="btn btn-primary btn-xs" href="/volunteers/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-danger btn-xs" href="/volunteers/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+            <% })}else{ %>
+                <tr>
+                    <td colspan="6">No Record Found</td>
+
+                </tr>
+            <% } %>
             </tfoot>
         </table>
     </div>

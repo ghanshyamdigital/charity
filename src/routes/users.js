@@ -1,9 +1,7 @@
 import express from "express";
-
 import {Users} from "./../models/admin/user";
 
 let router = express.Router();
-
 // Get All User Data
 router.get('/', (req, res) => {
   console.log('users');
@@ -19,7 +17,6 @@ router.get('/', (req, res) => {
 
 // Add New User Data
 router.post('/', (req, res, next) => {
-
   let User = new Users({
     email: req.body.email,
     password: req.body.password
@@ -33,7 +30,6 @@ router.post('/', (req, res, next) => {
 
 // Get Single User Data
 router.get('/:id', (req, res) => {
-
   Users.find({"_id": req.params.id})
       .then((data)=>{
           const dataObject = {"modalTitle": "Edit User", "modalSubmit": "Update", "users": data};

@@ -12,7 +12,7 @@
     <%- include ../layout/sidebar.ejs %>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <%- include banner-add-content.ejs %>
+        <%- include news-list-form.ejs %>
     </div>
     <%- include ../layout/footer.ejs %>
     <%- include ../layout/control-sidebar.ejs %>
@@ -20,29 +20,30 @@
 
 <!-- ./wrapper -->
 <%- include ../layout/js.ejs %>
-<!-- bs-custom-file-input -->
+
+<!-- page script -->
 <script src="/script-adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         bsCustomFileInput.init();
-    //     $.validator.setDefaults({
-    //         submitHandler: function () {
-    //
-    //             alert( "Form successful submitted!" );
-    //         }
-    //     });
-        $('#addBannerForm').validate({
+        //     $.validator.setDefaults({
+        //         submitHandler: function () {
+        //
+        //             alert( "Form successful submitted!" );
+        //         }
+        //     });
+        $('#addNewsForm').validate({
             rules: {
                 title: {
                     required: true,
                     minlength: 5
                 },
-                text: {
+                description: {
                     required: true,
                     minlength: 5
                 },
-                bannerImage: {
-                    required: "Please select a banner image",
+                newsImage: {
+                    required: "Please select a news image",
                 },
             },
             messages: {
@@ -50,7 +51,7 @@
                     required: "Please enter a title",
                     minlength: "Your title must be at least 5 characters long"
                 },
-                text: {
+                description: {
                     required: "Please provide a text",
                     minlength: "Your text must be at least 5 characters long"
                 },
@@ -70,5 +71,6 @@
         });
     });
 </script>
+
 </body>
 </html>
