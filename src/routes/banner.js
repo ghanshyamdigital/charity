@@ -18,7 +18,7 @@ let upload = multer({
     storage:Storage
 }).single('bannerImage');
 // Get All Banner Data
-router.get('    /', (req, res) => {
+router.get('/', (req, res) => {
     console.log('users');
     Banners.find({})
         .then((data)=>{
