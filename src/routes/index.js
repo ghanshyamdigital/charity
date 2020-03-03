@@ -13,14 +13,9 @@ router.get("/login", function(req, res, next) {
 });
 
 router.get("/", function(req, res, next) {
-  console.log('sdfgsg');
-  Banners.countDocuments({}).exec((err,count)=>{
-    Newss.countDocuments({}).exec((err,count_list)=>{
-      Volunteers.countDocuments({}).exec((err,count_vol)=>{
-        res.render("dashboard",{Banners_list:count, Newss_list:count_list,Volunteers_list:count_vol});
-      });
-    });
-  });
+  if(req.cookies.token){
+    res.redirect('/dashboard')
+  }else{  res.redirect("/login")}
 });
 
 router.get("/register", function(req, res, next) {
