@@ -7,14 +7,14 @@ let router = express.Router();
 
 let Storage= multer.diskStorage({
     destination:"./public/uploads/",
-    filename:(req,file,cb)=>{
-        cb(null,file.fieldname+"_"+file.originalname+"_"+path.extname(file.originalname));
+    filename:(req,files,cb)=>{
+        cb(null,files.fieldname+"_"+Date.now()+"_"+path.extname(files.originalname));
     }
 });
 
 let upload = multer({
     storage:Storage
-}).single('image');
+}).array('image',3);
 
 router.get('/',(req,res)=>{
     Volunteers.find({})
@@ -29,7 +29,7 @@ router.get('/',(req,res)=>{
 });
 
     const proof = [{title:"Aadhar card",value:"aadharcard"},
-    {title:"Pancard",value:"pancard"},
+    {title:"Votingcard",value:"votingcard"},
     {title:"Driving licence",value:"driving_licence"}];
 
 router.get('/add', (req, res) => {
@@ -42,9 +42,12 @@ router.post('/add',upload,(req, res, next) => {
         first_name: req.body.name,
         last_name: req.body.last_name,
         email:req.body.email,
-        residence_proof: req.body.residence_proof,
         phone_number: req.body.phone,
-        image: req.file.filename,
+        education: req.body.education,
+        residence_proof: req.body.residence_proof,
+        job_details: req.body.job_details,
+        why_you_join: req.body.why_you_join,
+        image: req.files,
     });
     Volunteer.save().then((data) => {
         res.redirect('/volunteers');
@@ -78,22 +81,29 @@ router.get('/edit/:id', function(req, res, next) {
 
 router.post('/edit/:id',upload, function(req, res, next) {
     var id=req.params.id;
-    if(req.file){
+    if(req.files){
         var dataRecords={
             first_name: req.body.name,
             last_name: req.body.last_name,
             email:req.body.email,
-            residence_proof: req.body.residence_proof,
             phone_number: req.body.phone,
-            image: req.file.filename,
+            education: req.body.education,
+            residence_proof: req.body.residence_proof,
+            job_details: req.body.job_details,
+            why_you_join: req.body.why_you_join,
+            image: req.files,
         }
     } else{
         var dataRecords={
             first_name: req.body.name,
             last_name: req.body.last_name,
             email:req.body.email,
-            residence_proof: req.body.residence_proof,
             phone_number: req.body.phone,
+            education: req.body.education,
+            residence_proof: req.body.residence_proof,
+            job_details: req.body.job_details,
+            why_you_join: req.body.why_you_join,
+
             // image: req.body.image,
         }
     }
