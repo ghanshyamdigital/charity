@@ -20,6 +20,7 @@ let upload = multer({
 
 // Get All Banner Data
 router.get('/', (req, res) => {
+    console.log('users');
     Banners.find({})
         .then((data)=>{
             const dataObject = data
@@ -29,7 +30,6 @@ router.get('/', (req, res) => {
         .catch((err)=>{
             console.log(err)
         })
-    // res.render('banner/banners')
 });
 
 
