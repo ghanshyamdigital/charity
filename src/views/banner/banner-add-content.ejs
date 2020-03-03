@@ -1,4 +1,3 @@
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -39,24 +38,41 @@
                                     <input type="text" name="text" class="form-control" id="text" value="<%= records.text%>" placeholder="Text" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="date">Date</label>
+                                    <input type="date" name="date" class="form-control" id="date" value="<%= date %>" placeholder="Text" required>
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputFile">Banner Image</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" value="<%= records.image%>" name="bannerImage" id="banner-image">
-                                            <label class="custom-file-label" for="banner-image"><%= records.image%></label>
+
+                                            <% records.image.map(function (img) {
+
+                                            %>
+                                            <input type="file" class="custom-file-input" value="<%= img.filename%>" name="bannerImage" id="banner-image" multiple required>
+                                                    <label class="custom-file-label"  for="banner-image"><%= records.files %></label>
+                                                <% })%>
 
 
                                         </div>
+
                                         <div class="input-group-append">
                                             <span class="input-group-text" id="">Upload</span>
                                         </div>
 
                                     </div>
                                 </div>
-                                <% if(records.image){ %>
-                                    <img src="../../uploads/<%= records.image %>" alt="profile image" width="80">
-                                <% } %>
-<!--                                <img src="../../../public/uploads<%= records.image %>" alt="profile image" width="80">-->
+                                 <% if(records.image) {%>
+                                <% records.image.forEach(function (img) {
+
+                                %>
+
+                                    <img src="../../uploads/<%= img.filename %>" alt="profile image" width="80">
+                                <% })%>
+                                <%}%>
+
+
+                                <!--                                <img src="../../../public/uploads<%= records.image %>" alt="profile image" width="80">-->
                             </div>
                             <!-- /.card-body -->
                             <div class="card-footer">

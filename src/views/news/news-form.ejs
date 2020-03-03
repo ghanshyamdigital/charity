@@ -17,6 +17,7 @@
             <tr>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Date</th>
                 <th>Image</th>
                 <th>Action</th>
             </tr>
@@ -27,11 +28,13 @@
                     <tr>
                         <td><%= row.title %></td>
                         <td><%= row.description %></td>
+                        <td><%= row.date %></td>
+
                         <td>
-                        <% if(row.image){ %>
-                            <img src="./uploads/<%= row.image %>" alt="profile image" width="80">
-                        <% } %>
-                        </td>
+                            <% if(row.image[0]){ %>
+                                <img src="./uploads/<%= row.image[1].filename  %>" alt="profile image" width="80">
+                            <% } %></td>
+
                         <td><a class="btn btn-primary btn-xs" href="/news/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-danger btn-xs" href="/news/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
                         </td>
