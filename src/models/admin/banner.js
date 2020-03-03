@@ -10,12 +10,16 @@ const bannerSchema = new Schema({
         type: String,
         // required: [true, 'Why no text?']
     },
+    date: {
+        type: Date,
+        // required: [true, 'Why no text?']
+    },
     image: {
-        type: String,
+        type: Array,
         // required: [true, 'Why no image?']
     },
     isVisible: { type: Boolean, default: true },
-    date: { type: Date, default: Date.now },
+    // date: { type: Date, default: Date.now },
 });
 
 const Banners = mongoose.model('Banners', bannerSchema );

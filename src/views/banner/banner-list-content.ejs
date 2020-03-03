@@ -18,19 +18,22 @@
                 <th>Image</th>
                 <th>Title</th>
                 <th>Text</th>
+                <th>Date</th>
                 <th>Action</th>
             </tr>
             </thead>
             <tbody>
             <%if (data.length >0){ %>
                 <% data.forEach(function(row){ %>
+
                     <tr>
                         <td>
-                        <% if(row.image){ %>
-                   <img src="./uploads/<%= row.image %>" alt="profile image" width="80">
+                        <% if(row.image[0]){ %>
+                   <img src="./uploads/<%= row.image[0].filename %>" alt="profile image" width="80">
                             <% } %></td>
                         <td><%= row.title %></td>
                         <td><%= row.text %></td>
+                        <td><%= row.date %></td>
                         <td><a class="btn btn-primary btn-xs" href="/banners/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
                             <a class="btn btn-danger btn-xs" href="/banners/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
                         </td>

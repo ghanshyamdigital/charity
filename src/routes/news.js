@@ -1,20 +1,21 @@
 import express from "express";
-import {news,Newss} from "../models/admin/news";
+import {Newss} from "../models/admin/news";
 import multer from "multer";
 import path from "path";
+import moment from"moment";
 
 let router = express.Router();
 
 let Storage= multer.diskStorage({
     destination:"./public/uploads/",
-    filename:(req,file,cb)=>{
-        cb(null,file.fieldname+"_"+file.originalname+"_"+path.extname(file.originalname));
+    filename:(req,files,cb)=>{
+        cb(null,files.fieldname+"_"+Date.now()+"_"+path.extname(files.originalname));
     }
 });
 
 let upload = multer({
     storage:Storage
-}).single('newsImage');
+}).array('newsImage',3);
 
 router.get('/',(req,res)=>{
     Newss.find({})
@@ -29,14 +30,15 @@ router.get('/',(req,res)=>{
 });
 
 router.get('/add', (req, res) => {
-    res.render('news/news-list',{ "title":"Add News","records":"" });
+    res.render('news/news-list',{ "title":"Add News","records":"","date":"" });
 });
 
 router.post('/add',upload, (req, res) => {
     let News = new Newss({
         title: req.body.title,
         description: req.body.description,
-        image: req.file.filename,
+        date:req.body.date,
+        image: req.files,
     });
     News.save().then((data) => {
         res.redirect('/news');
@@ -63,22 +65,24 @@ router.get('/edit/:id', function(req, res, next) {
     var edit= Newss.findById(id);
     edit.exec(function(err,data){
         if(err) throw err;
-        res.render('news/news-list', { "title":"Edit News","records":data });
+        res.render('news/news-list', { "title":"Edit News","records":data,"date":moment(data.date).format("YYYY-MM-DD") });
     });
 });
 
 router.post('/edit/:id',upload, function(req, res, next) {
     var id=req.params.id;
-    if(req.file){
+    if(req.files){
         var dataRecords={
             title: req.body.title,
             description: req.body.description,
-            image: req.file.filename,
+            date:req.body.date,
+            image: req.files,
         }
     } else{
         var dataRecords={
             title: req.body.title,
             description: req.body.description,
+            date:req.body.date,
         }
     }
     var edit= Newss.findByIdAndUpdate(id,dataRecords);

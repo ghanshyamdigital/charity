@@ -31,7 +31,7 @@
                     <form role="form" enctype="multipart/form-data"  id="addVolunteerForm" method="post">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="name-join">Name<span>*</span></label>
+                                <label for="name-join">First Name<span>*</span></label>
                                 <input type="text" class="form-control" value="<%= records.first_name%>" name="name" id="name" required>
                             </div>
                             <div class="form-group">
@@ -46,6 +46,19 @@
                                     <input type="email" value="<%= records.email%>" class="form-control" name="email" id="email" required>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="phone-join">Phone<span>*</span></label>
+                                    <input type="tel"pattern="^\d{10}$" maxlength="10" value="<%= records.phone_number%>" class="form-control" name="phone" id="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="education-join">Education<span>*</span></label>
+                                    <input type="text" class="form-control" value="<%= records.education%>" name="education" id="education" required>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label>Residence Proof</label>
                                 <select  id="proof" class="form-control select2"  name="residence_proof" style="width: 100%;">
@@ -63,25 +76,37 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-group">
-                                    <label for="phone-join">Phone<span>*</span></label>
-                                    <input type="tel"pattern="^\d{10}$" maxlength="10" value="<%= records.phone_number%>" class="form-control" name="phone" id="phone" required>
+                                    <label for="job details">Job Details<span>*</span></label>
+                                    <input type="text" class="form-control" value="<%= records.job_details%>" name="job_details" id="job_details" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputFile">Image</label>
+                                <div class="form-group">
+                                    <label for="why-you-join">Why You Join Volunteer<span>*</span></label>
+                                    <input type="text" class="form-control" value="<%= records.why_you_join%>" name="why_you_join" id="why_you_join" required>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Attach Image And Signature</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" value="<%= records.image%>" name="image" id="image">
-                                        <label class="custom-file-label" for="image"><%= records.image%></label>
+                                        <input type="file" class="custom-file-input" value="<%= records.image%>" name="image" id="image" multiple required>
+                                        <label class="custom-file-label" for="image"><%= records.files%></label>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="">Upload</span>
                                     </div>
                                 </div>
                             </div>
-                            <% if(records.image){ %>
-                                <img src="../../uploads/<%= records.image %>" alt="profile image" width="80">
-                            <% } %>
+                            <% if(records.image) {%>
+                                <% records.image.forEach(function (img) {
+
+                                %>
+
+                                     <img src="../../uploads/<%= img.filename %>" alt="profile image" width="80">
+                                <% })%>
+                            <%}%>
                         </div>
 
                         <!-- /.card-body -->
