@@ -3,6 +3,7 @@ import {Banners} from "./../models/admin/banner";
 import {Newss} from "../models/admin/news";
 import {Volunteers} from "../models/admin/volunteer";
 import userController from '../controllers/users.controller'
+import * as signedCookies from "admin-lte/plugins/jszip/jszip";
 
 let router = express.Router();
 
