@@ -3,7 +3,6 @@ import {Banners} from "./../models/admin/banner";
 import {Newss} from "../models/admin/news";
 import {Volunteers} from "../models/admin/volunteer";
 import userController from '../controllers/users.controller'
-import * as signedCookies from "admin-lte/plugins/jszip/jszip";
 
 let router = express.Router();
 
@@ -17,6 +16,12 @@ router.get("/logout", function(req, res, next) {
   res.redirect('/login')
  });
 
+
+router.get("/", function(req, res, next) {
+  if(req.cookies.token){
+    res.redirect('/dashboard')
+  }else{  res.redirect("/login")}
+});
 
 router.get("/register", function(req, res, next) {
   res.render("register");
