@@ -12,7 +12,11 @@ router.get("/login", function(req, res, next) {
     }else{  res.render("login",{msg:''});}
 });
 
-
+router.get("/", function(req, res, next) {
+  if(req.cookies.token){
+    res.redirect('/dashboard')
+  }else{  res.redirect("/login")}
+});
 
 router.get("/register", function(req, res, next) {
   res.render("register");
