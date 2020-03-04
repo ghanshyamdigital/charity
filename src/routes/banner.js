@@ -101,12 +101,12 @@ router.get('/edit/:id', function(req, res, next) {
 });
 router.post('/edit/:id',upload, function(req, res, next) {
     var id=req.params.id;
-    if(req.file){
+    if(req.files){
         var dataRecords={
             title: req.body.title,
             text: req.body.text,
             date: req.body.date,
-            image: req.file.filename,
+            image: req.files,
 
         }
     } else{

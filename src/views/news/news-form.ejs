@@ -32,7 +32,7 @@
 
                         <td>
                             <% if(row.image[0]){ %>
-                                <img src="./uploads/<%= row.image[1].filename  %>" alt="profile image" width="80">
+                                <img src="./uploads/<%= row.image[0].filename  %>" alt="profile image" width="80">
                             <% } %></td>
 
                         <td><a class="btn btn-primary btn-xs" href="/news/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>

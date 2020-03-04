@@ -45,15 +45,8 @@
                                     <label for="exampleInputFile">Banner Image</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-
-                                            <% records.image.map(function (img) {
-
-                                            %>
-                                            <input type="file" class="custom-file-input" value="<%= img.filename%>" name="bannerImage" id="banner-image" multiple required>
-                                                    <label class="custom-file-label"  for="banner-image"><%= records.files %></label>
-                                                <% })%>
-
-
+                                            <input type="file" class="custom-file-input" value="<%= records.image%>" name="bannerImage" id="banner-image" multiple required>
+                                            <label class="custom-file-label"  for="banner-image"><%= records.files %></label>
                                         </div>
 
                                         <div class="input-group-append">
