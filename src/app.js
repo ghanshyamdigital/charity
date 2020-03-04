@@ -2,6 +2,7 @@ import express from "express";
 
 import usersRouter from "./routes/users";
 import indexRouter from "./routes";
+import ClientIndexRouter from "./views/Client/routes";
 import bannerRouter from "./routes/banner";
 import newsRouter from "./routes/news";
 import volunteerRouter from "./routes/volunteer";
@@ -34,12 +35,17 @@ app.use(
     "/script-adminlte",
     express.static(path.join(__dirname, "../node_modules/admin-lte/"))
 );
+
 app.use(jwt());
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/banners', bannerRouter);
-app.use('/news',newsRouter);
-app.use('/volunteers',volunteerRouter);
+app.use('/admin', indexRouter);
+app.use('/admin/users', usersRouter);
+app.use('/admin/banners', bannerRouter);
+app.use('/admin/news',newsRouter);
+app.use('/admin/volunteers',volunteerRouter);
+
+//admin -> admin functionality
+/// -> client func...
+app.use('/', ClientIndexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -49,7 +55,7 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   if(err instanceof UnauthorizedError){
-    res.redirect('/login');
+    res.render('login',{msg:''});
     return;
   }
   // set locals, only providing error in development

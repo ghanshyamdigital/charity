@@ -20,6 +20,7 @@ console.log(req.body.email);
         }
 
         if (user && bcrypt.compareSync(req.body.password, user.hash)) {
+            console.log("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")
             const {hash, ...userWithoutHash} = user.toObject();
             const token = jwt.sign({sub: user._id, role: user.role}, config.secret);
             const expiration = process.env.DB_ENV === 'testing' ? 100 : 604800000;
@@ -30,7 +31,7 @@ console.log(req.body.email);
               });
               console.log("cookies",res.cookie);
               
-            res.redirect(302, '/dashboard');
+            res.redirect(302, '/admin/dashboard');
         } else {
             return res.render("login", {msg: "invalid password."})
         }
@@ -67,7 +68,7 @@ controller.addUser = async (req, res) => {
 
         const savedUser = await User.addUser(userToAdd, req.body.password);
         console.log('Adding user...',savedUser);
-        res.redirect(302, '/login');
+        res.redirect(302, '/admin/login');
 
     } catch (err) {
     console.error(`Error in adding user- ${err}`);

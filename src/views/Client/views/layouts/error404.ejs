@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include head.ejs%>
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<!--Header Section Start Here -->
+			<%- include Header.ejs%>
+			<!-- Header Section End Here -->
+			<!-- site content -->
+			<div id="main">
+				<!-- Breadcrumb Section Start Here -->
+				<div class="breadcrumb-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<h1>No Page Found</h1>
+								<ul class="breadcrumb">
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li class="active">
+										404 Error
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Breadcrumb Section End Here -->
+				
+				<section class="container" id="page-info">
+					<div class="row">
+				<!-- Table Section Start Here -->
+				<div class="col-xs-12 col-md-8 col-md-offset-2 four-zero-four">
+					<strong>404</strong>
+
+									<header class="page-header">
+										<h2>Something Went Wrong To Find Page</h2>
+										<p>
+										The page you are looking for had an accident due to wrong URL, so try with right URL to reach at the target page.
+										</p>
+									</header>
+									<a class="btn btn-default" href="index.html">BACK TO HOMEPAGE</a>
+									
+				</div>		
+					
+					</div>
+					
+				</section>
+
+			</div>
+			<!--Footer Section Start Here -->
+			<%- include Footer.ejs%>
+	<!--Footer Section End Here -->
+			</div>
+
+		<!-- Scripts are here -->
+		<%- include scripts.ejs%>
+	</body>
+</html>
