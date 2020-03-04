@@ -9,7 +9,6 @@ let router = express.Router();
 let Storage= multer.diskStorage({
     destination:"./public/uploads/",
     filename:(req,files,cb)=>{
-        console.log(files)
         cb(null,files.fieldname+"_"+Date.now()+"_"+path.extname(files.originalname));
     }
 });
@@ -20,11 +19,9 @@ let upload = multer({
 
 // Get All Banner Data
 router.get('/', (req, res) => {
-    console.log('users');
     Banners.find({})
         .then((data)=>{
-            const dataObject = data
-            console.log('list banner',dataObject)
+            const dataObject = data;
             res.render('banner/banners',{"data":dataObject})
         })
         .catch((err)=>{
@@ -36,15 +33,12 @@ router.get('/', (req, res) => {
 
 // Get All Banner Data
 router.get('/add', (req, res) => {
-    console.log('users');
-
             res.render('banner/banner-add',{"title":"Add Banner","records":'',"date":''})
 
 });
 
 // Add New Banner Data
 router.post('/add',upload, (req, res, next) => {
-    console.log("date update",req.body.date);
 
     let Banner = new Banners({
         title: req.body.title,
@@ -52,9 +46,8 @@ router.post('/add',upload, (req, res, next) => {
         date: req.body.date,
         image: req.files,
     });
-    console.log("body",Banner);
+
     Banner.save().then((data) => {
-        console.log("multiple",data)
         res.redirect('/banners');
     }, (e) => {
         res.status(400).send(e)
@@ -92,8 +85,6 @@ router.get('/edit/:id', function(req, res, next) {
     var id=req.params.id;
     var edit= Banners.findById(id);
     edit.exec(function(err,data){
-        console.log("editdata",data);
-        console.log("dateedit",moment(data.date).format("MM/DD/YYYY"));
         if(err) throw err;
         res.render('banner/banner-add', { "title":"Edit Banner","records":data ,"date":moment(data.date).format("YYYY-MM-DD")});
     });
@@ -125,8 +116,6 @@ router.post('/edit/:id',upload, function(req, res, next) {
 });
 //Delete Single Banner Data
 router.get('/delete/:id', (req, res) => {
-
-    console.log("paramsId",req.params._id)
     Banners.findByIdAndRemove(
         req.params.id,
         // the callback function

@@ -3,16 +3,16 @@
   <head>
     <%- include layout/header.ejs %>
   </head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-logo">
-    <a href=""><b>Admin</b>LTE</a> 
-  </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-      <% if(msg !=''){ %>
+  <body class="hold-transition login-page">
+  <div class="login-box">
+      <div class="login-logo">
+          <a href=""><b>Admin</b>LTE</a>
+      </div>
+      <!-- /.login-logo -->
+      <div class="card">
+          <div class="card-body login-card-body">
+              <p class="login-box-msg">Sign in to start your session</p>
+              <% if(msg !=''){ %>
         <p style="text-align: center" class="bg-danger">   <%= msg %></p>
       <% } %>
       <form action="/admin/login" method="post">

@@ -1,30 +1,30 @@
-const expressJwt = require('express-jwt')
+const expressJwt = require('express-jwt');
 import config from '../config/config.dev'
 
 import User from '../models/admin/user'
 
-module.exports = jwt
+module.exports = jwt;
 
 function jwt () {
-  const secret = config.secret
+    const secret = config.secret;
   return expressJwt({secret, getToken}).unless({
     path: [
-      // public routes that don't require authentication
+        // public routes that don't require authentication
         '/admin/authenticate',
         '/admin/register',
         '/',
         '/contactUs',
-         '/admin/dashboard',
-        '/admin/banners',
-        '/admin/news',
-        '/admin/volunteers',
-        '/login',
+        // '/admin/dashboard',
+        // '/admin/banners',
+        // '/admin/news',
+        // '/admin/volunteers',
+        '/admin/login',
     ]
   })
 }
 
 async function isRevoked (req, payload, done) {
-  const user = await User.getById(payload.sub)
+    const user = await User.getById(payload.sub);
 
   // revoke token if user no longer exists
   if (!user) {

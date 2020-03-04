@@ -11,7 +11,7 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import createError from "http-errors";
 import jwt from './helper/jwt'
-import { UnauthorizedError } from "express-jwt/lib";
+import {UnauthorizedError} from "express-jwt/lib";
 
 // Required Module Files
 let {mongoose} = require('./db/mongoose');
@@ -22,7 +22,6 @@ let app = express();
 app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-console.log(cookieParser())
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -55,7 +54,8 @@ app.use(function(req, res, next) {
 // error handler
 app.use(function(err, req, res, next) {
   if(err instanceof UnauthorizedError){
-    res.render('login',{msg:''});
+    console.log('error', err.message);
+    res.render('login', {msg: ''});
     return;
   }
   // set locals, only providing error in development
