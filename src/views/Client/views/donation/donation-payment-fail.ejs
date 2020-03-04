@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ../layouts/head.ejs%>
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<!--Header Section Start Here -->
+			<%- include ../layouts/Header.ejs%>
+			<!-- Header Section End Here -->
+			<!-- site content -->
+			<div id="main">
+				<!-- Breadcrumb Section Start Here -->
+				<div class="breadcrumb-section payment-breadcrumb-section">
+					<!-- <div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<img src="assets/img/payment-success-banner.jpg" alt=""/>
+							</div>
+						</div>
+					</div> -->
+				</div>
+				<!-- Breadcrumb Section End Here -->
+				
+				<section class="container" id="page-info">
+					<div class="row">
+				<!-- Table Section Start Here -->
+				<div class="col-xs-12  payment-success-box  payment-fail">
+					<strong>Sorry</strong>
+					<div class="hand-pics">
+					<img src="../../../../../public/assets/img/payment-failed-cross.png" alt=""/></div>
+					<header class="page-header failed-page-header">
+										<h2>Server Encountered a problem to carry out your transaction</h2>
+										<p>
+											
+The payment was not authorized successfully at the moment due to server error and wrong details. Kindly, go through previous page to ensue that the entered information is correct.
+										</p>
+									</header>
+							<a class="btn btn-default btn-again" href="../layouts/index.html">Try Again</a>
+									
+				</div>	
+				
+				
+	
+				
+				
+					
+					
+					</div>
+					
+				</section>
+
+			</div>
+			<!--Footer Section Start Here -->
+			<%- include ../layouts/Footer.ejs%>
+	<!--Footer Section End Here -->
+			</div>
+
+		<!-- Scripts are here -->
+		<%- include ../layouts/scripts.ejs%>
+	</body>
+</html>

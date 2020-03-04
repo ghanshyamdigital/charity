@@ -4,10 +4,9 @@ import {Users} from "./../models/admin/user";
 let router = express.Router();
 // Get All User Data
 router.get('/', (req, res) => {
-  console.log('users');
   Users.find({})
       .then((data)=>{
-        const dataObject = {"title":"Users","users":data}
+        const dataObject = {"title": "Users", "users": data};
         res.send({"data":dataObject})
       })
       .catch((err)=>{
@@ -21,11 +20,11 @@ router.post('/', (req, res, next) => {
     email: req.body.email,
     password: req.body.password
   });
-User.save().then((doc) => { 
-    res.send(doc);
-  }, (e) => {
-    res.status(400).send(e)
-  });
+    User.save().then((doc) => {
+        res.send(doc);
+    }, (e) => {
+        res.status(400).send(e)
+    });
 });
 
 // Get Single User Data

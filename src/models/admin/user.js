@@ -26,11 +26,10 @@ const UserSchema = mongoose.Schema(
     }, {
       timestamps: true
     }, {collection: 'User'});
-  
-  let UsersModel = mongoose.model('User', UserSchema);
+
+let UsersModel = mongoose.model('User', UserSchema);
 
   UsersModel.authenticate = ({email, password}) => {
-    console.log(email,password)
     const user = UsersModel.findOne({email});
     if (user && bcrypt.compareSync(password, user.hash)) {
       const {hash, ...userWithoutHash} = user.toObject();
@@ -44,20 +43,20 @@ const UserSchema = mongoose.Schema(
   UsersModel.getUserByEmail = (email) => {
     return UsersModel.findOne({email: email})
   };
-  
-  UsersModel.getUserByName = (username) => {
+
+UsersModel.getUserByName = (username) => {
     return UsersModel.findOne({username: username})
   };
   UsersModel.addUser = (userToAdd, password) => {
     const user = new UsersModel(userToAdd);
-  
-    // hash password
+
+      // hash password
     if (password) {
       user.hash = bcrypt.hashSync(password, 10)
     }
-  
-    user.save();
-  
-    return user
+
+      user.save();
+
+      return user
   };
 export default UsersModel
