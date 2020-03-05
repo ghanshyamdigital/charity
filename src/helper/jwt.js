@@ -12,13 +12,28 @@ function jwt () {
         // public routes that don't require authentication
         '/admin/authenticate',
         '/admin/register',
+        '/admin/login',
         '/',
         '/contactUs',
-        // '/admin/dashboard',
-        // '/admin/banners',
-        // '/admin/news',
-        // '/admin/volunteers',
-        '/admin/login',
+        '/volunteer',
+        '/volunteer/registration',
+        '/causes',
+        '/causes-detail',
+        '/causes-detail-with-sidebar',
+        '/donation',
+        '/external.html',
+        '/portfolio',
+        '/portfolio-detail',
+        '/blog-full-width',
+        '/blog-full-width-details',
+        '/our-story',
+        '/our-mission',
+        '/gallery',
+        '/gallery-two-column',
+        '/launch',
+        '/events',
+        '/event-details',
+
     ]
   })
 }

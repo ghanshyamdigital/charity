@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include layouts/head.ejs%>
+		
+
+	</head>
+	<body>
+		<div id="wrapper" class=" launch clearfix">
+			<header id="header">
+				<div class="container">
+
+					<div class="row">
+						<a href="/" class="col-xs-12" title="Welcome to Charity"><img src="../../../../assets/img/launch-logo.png" alt="Charity"></a>
+					</div>
+
+				</div>
+
+			</header>
+
+			<div class="content">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-md-7 col-lg-5">
+
+							<h1>Something big is
+							gonna happen</h1>
+							<span class="stay">Stay tuned with us for the surprises and feel free to leave an email to know our latest updates </span>
+						</div>
+
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12 col-md-7 col-lg-6">
+							<!-- CountDown Frame -->
+							<div id="defaultCountdown" class="counter clearfix"></div>
+							<!-- CountDown Frame -->
+							
+							</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-6">
+							
+								<form role="form">
+
+								<div class="input-group">
+									<input class="form-control" type="email" placeholder="Enter email address">
+									<div class="input-group-addon">
+										<input type="submit" class="btn btn-theme" value="submit">
+									</div>
+								</div>
+
+							</form>
+							</div>
+							</div>
+				</div>
+
+			</div>
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 col-xs-12">
+
+							<span>&copy; Copyright 2014, All Rights Reserved by Charity Theme.</span>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</footer>
+		</div>
+
+		<script src="../../../../assets/js/jquery.min.js"></script>
+		<!-- Bootstrap Js-->
+		<script src="../../../../assets/js/bootstrap.min.js"></script>
+		<script src="../../../../assets/js/jquery.easing.min.js"></script>
+		<!--countdown Js-->
+		<script src="../../../../assets/js/jquery.plugin.js"></script>
+		<script src="../../../../assets/js/jquery.countdown.js"></script>
+		<!--countdown Js End -->
+	<!-- 	<script src="assets/js/site.js"></script> -->
+	<script>
+$(function () {
+	$("#defaultCountdown").countdown({ 
+		//Time set = Year, Month,Date
+    until: new Date(2030, 2, 14)}); 
+
+});
+	
+		</script>
+	</body>
+</html>
