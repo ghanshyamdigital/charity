@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include ../layout/header.ejs %>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+
+<div class="wrapper">
+    <%- include ../layout/navigation.ejs %>
+    <%- include ../layout/sidebar.ejs %>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <%- include events-add-content.ejs %>
+    </div>
+    <%- include ../layout/footer.ejs %>
+    <%- include ../layout/control-sidebar.ejs %>
+</div>
+
+<!-- ./wrapper -->
+<%- include ../layout/js.ejs %>
+<!-- bs-custom-file-input -->
+<script src="/script-adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+        //     $.validator.setDefaults({
+        //         submitHandler: function () {
+        //
+        //             alert( "Form successful submitted!" );
+        //         }
+        //     });
+        $('#addEventsForm').validate({
+            rules: {
+                event_name: {
+                    required: true,
+                    minlength: 5
+                },
+                text: {
+                    required: true,
+                    minlength: 5
+                },
+                bannerImage: {
+                    required: "Please select a banner image",
+                },
+            },
+            messages: {
+                event_name: {
+                    required: "Please enter a title",
+                    minlength: "Your title must be at least 5 characters long"
+                },
+                text: {
+                    required: "Please provide a text",
+                    minlength: "Your text must be at least 5 characters long"
+                },
+
+            },
+            errorElement: 'span',
+            errorPlacement: function (error, element) {
+                error.addClass('invalid-feedback');
+                element.closest('.form-group').append(error);
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass('is-invalid');
+            }
+        });
+    });
+</script>
+</body>
+</html>

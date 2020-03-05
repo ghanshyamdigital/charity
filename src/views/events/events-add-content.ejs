@@ -1,0 +1,87 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1><%= title %></h1>
+
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/events"> Events List</a></li>
+                    <li class="breadcrumb-item active"><%= title %></li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-secondary">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Events Details <small></small></h3>
+                    </div>
+                    <form role="form" action="" enctype="multipart/form-data" id="addEventsForm" method="post">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="title">Event Name</label>
+                                <input type="text" name="events_name" class="form-control" id="title" value="<%= records.event_name%>" placeholder="Enter Event Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Vanue</label>
+                                <input type="text" name="vanue" class="form-control" id="vanue" value="<%= records.vanue%>" placeholder="Vanue" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date & Time</label>
+                                <input type="datetime-local" name="date" class="form-control" id="date" value="<%= date %>" placeholder="Text" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Events Image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" value="<%= records.image%>" name="eventImage" id="banner-image" multiple required>
+                                        <label class="custom-file-label"  for="event-image"><%= records.files %></label>
+                                    </div>
+
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="">Upload</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <% if(records.image) {%>
+                                <% records.image.forEach(function (img) {
+
+                                %>
+
+                                    <img src="../../uploads/<%= img.filename %>" alt="profile image" width="80">
+                                <% })%>
+                            <%}%>
+
+                            <!--                                <img src="../../../public/uploads<%= records.image %>" alt="profile image" width="80">-->
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

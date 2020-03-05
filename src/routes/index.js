@@ -2,6 +2,7 @@ import express from 'express';
 import {Banners} from "./../models/admin/banner";
 import {Newss} from "../models/admin/news";
 import {Volunteers} from "../models/admin/volunteer";
+import {events} from "../models/admin/events";
 import userController from '../controllers/users.controller'
 import * as signedCookies from "admin-lte/plugins/jszip/jszip";
 
@@ -35,12 +36,15 @@ router.get("/dashboard", function(req, res, next) {
   Banners.countDocuments({}).exec((err,count)=>{
     Newss.countDocuments({}).exec((err,count_list)=>{
       Volunteers.countDocuments({}).exec((err,count_vol)=>{
+        events.countDocuments({}).exec((err,count_li)=>{
 
-        res.render("dashboard",{Banners_list:count, Newss_list:count_list,Volunteers_list:count_vol});
+        res.render("dashboard",{Banners_list:count, Newss_list:count_list,Volunteers_list:count_vol,Event_list:count_li});
       });
     });
   });
 });
+});
+
 
 router.post('/login', (req, res) => {
   console.log("req",req.body);
