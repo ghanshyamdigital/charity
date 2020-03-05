@@ -19,8 +19,7 @@ let upload = multer({
 router.get('/',(req,res)=>{
     Volunteers.find({})
         .then((data)=>{
-            const dataObject = data
-            console.log("volunteers",dataObject)
+            const dataObject = data;
             res.render('volunteer/volunteers',{"data":dataObject});
         })
         .catch((err)=>{
@@ -33,7 +32,6 @@ router.get('/',(req,res)=>{
     {title:"Driving licence",value:"driving_licence"}];
 
 router.get('/add', (req, res) => {
-    console.log('volunteers');
     res.render('volunteer/volunteer-join',{ "title":"Add Volunteer","records":"","proof":proof});
 });
 
@@ -57,7 +55,6 @@ router.post('/add',upload,(req, res, next) => {
 });
 
 router.get('/delete/:id', (req, res) => {
-    console.log("paramsId",req.params._id)
     Volunteers.findByIdAndRemove(
         req.params.id,
         // the callback function
@@ -73,7 +70,6 @@ router.get('/edit/:id', function(req, res, next) {
     var id=req.params.id;
     var edit= Volunteers.findById(id);
     edit.exec(function(err,data){
-        console.log("volunteerData by Id",data)
         if(err) throw err;
         res.render('volunteer/volunteer-join', { "title":"Edit Volunteer","records":data,"proof":proof});
     });

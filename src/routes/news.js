@@ -2,7 +2,7 @@ import express from "express";
 import {Newss} from "../models/admin/news";
 import multer from "multer";
 import path from "path";
-import moment from"moment";
+import moment from "moment";
 
 let router = express.Router();
 
@@ -20,8 +20,7 @@ let upload = multer({
 router.get('/',(req,res)=>{
     Newss.find({})
         .then((data)=>{
-            const dataObject = data
-            console.log('list banner',dataObject)
+            const dataObject = data;
             res.render('news/news',{"data":dataObject})
         })
         .catch((err)=>{
@@ -48,7 +47,6 @@ router.post('/add',upload, (req, res) => {
 });
 
 router.get('/delete/:id', (req, res) => {
-    console.log("paramsId",req.params._id)
     Newss.findByIdAndRemove(
         req.params.id,
         // the callback function

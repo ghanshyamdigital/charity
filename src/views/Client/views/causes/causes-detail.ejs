@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include ../layouts/head.ejs%>
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<!--Header Section Start Here -->
+			<%- include ../layouts/Header.ejs%>
+			<!-- Header Section End Here -->
+
+			<!-- site content -->
+			<div id="main">
+				<!--Breadcrumb Section Start Here-->
+				<div class="breadcrumb-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<h1>Causes</h1>
+								<ul class="breadcrumb">
+									<li>
+										<a href="../layouts/index.html">Home</a>
+									</li>
+									<li class="active">
+										Causes
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Breadcrumb Section End Here-->
+
+				<div class="cause-page" id="page-info">
+					<!-- Our Causes Detail Section-->
+
+						<div class="container anim-section">
+							<div class="row">
+								<div class="col-xs-12">
+
+									<div class="row article-list-large progressbar">
+										<div class="col-xs-12 anim-section">
+
+											<div class="text-center section-header">
+
+												<h2 class="h4">Help African children to get shelter</h2>
+												<span class="date-desc">06 august, 2014 </span><span class="palce-name">Africa, Child care</span>
+											</div>
+											<figure class="article-pic">
+											<img src="../../../../../public/assets/img/detail-big-01.jpg" alt="">
+											</figure>
+											<div class="progress">
+												<div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+													<span class="progress-value">72% </span>
+												</div>
+											</div>
+											
+											
+
+											<div class="detail-description">
+													<div class="donation-details">
+
+													<span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+													<a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default pull-right">DONATE NOW</a>
+												</div>
+
+												<p class="donation-summary">
+													
+Being homeless is perhaps hardest on the children. They need to feel safe and secure, so that they can concentrate in school. In addition to this, they need exercise, recreation and playtime. You can donate to help African children to help them get their shelter. In short, homeless children need everything that we take for granted but they need it every day.
+												</p>
+												<p>
+													You can offer any kind of support to homeless children by providing therapeutic support services with the goal of improving their emotional and behavioral well being. This helps the children’s progression towards increased financial stability.
+												</p>
+
+												<p>
+													Homeless children need a wide range of support services to address their mental and physical health. They often need addiction treatment, psychological counseling, job training, childcare and eventual job placement help. Providing an overall growth to homeless children is not an easy task and the job cannot be fulfilled without your support. Hence, help us raise the standards of these poverty stricken children in any of the manners possible. We attempt to provide shelter, security and a bright future to the children in the following manner. 
+												</p>
+
+												<ul class="list-trangled">
+													<li>
+														Fulfillment of primary necessities that includes food, clothing and shelter
+													</li>
+													<li>
+														Medical care to the children who have a poor health or to those who require special medical attention
+													</li>
+													<li>
+														Education opportunities to homeless children so that they can have a bright future ahead
+													</li>
+													<li>
+														Security to their future by providing them training on sports and other curriculum activities
+													</li>
+												</ul>
+
+												<a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+											</div>
+											<!--step donation-->
+											<div class="step-donation">
+
+												<header class="donate-easy-steps section-header">
+													<h2>How you can Donate, <strong>Easy Steps</strong></h2>
+												</header>
+
+												<div class="text-center">
+
+													<div class="col-xs-12 col-sm-4 anim-section">
+														<div class="sec-step-desc">
+															<span class="number-count">1</span>
+															<h4 class="normal-text">Select how much you want to Donate</h4>
+															<p>
+																Provide us your preference by denoting how much you can donate
+															</p>
+														</div>
+
+													</div>
+
+													<div class="col-xs-12 col-sm-4 anim-section">
+														<div class="sec-step-desc">
+															<span class="number-count">2</span>
+															<h4 class="normal-text">Fill The Simple Form</h4>
+															<p>
+																Fill up a simple form to let us know a bit about you and donation reason
+															</p>
+														</div>
+
+													</div>
+
+													<div class="cols-xs-12 col-sm-4 anim-section">
+														<div class="sec-step-desc">
+															<span class="number-count">3</span>
+															<h4 class="normal-text">Feel proud on helping out</h4>
+															<p>
+															Fill the form, send it to us and feel proud to be a part of our donation campaign.  
+															</p>
+														</div>
+
+													</div>
+
+												</div>
+
+												<!--step donation-->
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- our causes detail-->
+
+						</div>
+					</div>
+				
+
+			</div>
+			<!-- site content ends -->
+
+			<!--Footer Section Start Here -->
+			<%- include ../layouts/Footer.ejs%>
+	<!--Footer Section End Here -->
+		</div>
+
+		<!-- donation form popup -->
+
+		<<%- include ../donation/DonationDialog.ejs%>
+		<!-- donation form popup -->
+		<!-- Scripts are here -->
+		<%- include ../layouts/scripts.ejs%>
+	</body>
+</html>
