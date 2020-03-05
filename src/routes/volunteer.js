@@ -48,6 +48,8 @@ router.post('/add',upload,(req, res, next) => {
         image: req.files,
     });
     Volunteer.save().then((data) => {
+        console.log(data)
+
         res.redirect('/volunteers');
     }, (e) => {
         res.status(400).send(e)
