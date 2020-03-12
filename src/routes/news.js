@@ -40,7 +40,7 @@ router.post('/add',upload, (req, res) => {
         image: req.files,
     });
     News.save().then((data) => {
-        res.redirect('/news');
+        res.redirect('/admin/news');
     }, (e) => {
         res.status(400).send(e)
     });
@@ -53,7 +53,7 @@ router.get('/delete/:id', (req, res) => {
         (err, banner) => {
             // Handle any possible database errors
             if (err) return res.status(500).send(err);
-            return res.redirect('/news')
+            return res.redirect('/admin/news')
         }
     )
 });
@@ -86,7 +86,7 @@ router.post('/edit/:id',upload, function(req, res, next) {
     var edit= Newss.findByIdAndUpdate(id,dataRecords);
     edit.exec(function(err,data){
         if(err) throw err;
-        res.redirect('/news');
+        res.redirect('/admin/news');
     });
 });
 

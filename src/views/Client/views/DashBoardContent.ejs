@@ -5,9 +5,10 @@
         <div class="rev_slider banner-slider">
             <ul>
                 <!-- SLIDE  -->
-                <li data-transition="random" data-slotamount="7" data-masterspeed="500" class="slide-1" >
+                <li data-transition="random" data-slotamount="7" data-masterspeed="500" class="slide-1">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/img/slide-banner-01.jpg" alt="banner" data-bgfit="cover" data-bgposition="center 36%" data-bgrepeat="no-repeat">
+                    <img src="./uploads/<%= records[0].image[0].filename %>" alt="banner" data-bgfit="cover"
+                         data-bgposition="center 36%" data-bgrepeat="no-repeat">
 
                     <div
                             data-endspeed="500"
@@ -28,11 +29,12 @@
                             data-y="150"
                             data-x="152"
                             class="tp-caption sft banner-heading">
-                        <h2><strong>Donate &amp; Help</strong>
+                        <h2><strong><%= records[0].title %></strong>
 
-                            Raise Fund For African Children and Their Education
+                            <%= records[0].text %>
                         </h2>
                     </div>
+
 
                     <div
                             data-endspeed="1000"
@@ -42,8 +44,10 @@
                             data-y="304"
                             data-x="152"
                             class="tp-caption sft banner-summary">
+                        <br>
                         <p>
-                            The world's best fundraising website works outstandingly for African children by raising money for ideal cause, including medical bills, education, help and awesome donation causes.
+                            The world's best fundraising website works outstandingly for African children by raising
+                            money for ideal cause, including medical bills, education, help and awesome donation causes.
                         </p>
                     </div>
 
@@ -55,14 +59,17 @@
                             data-y="416"
                             data-x="152"
                             class="tp-caption sft">
-                        <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">Donate NOW</a>
+                        <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">Donate
+                            NOW</a>
                     </div>
                 </li>
                 <!-- SLIDE  -->
                 <!-- SLIDE  -->
-                <li data-transition="random" data-slotamount="7" data-masterspeed="500" class="slide-2" >
+                <li data-transition="random" data-slotamount="7" data-masterspeed="500" class="slide-2">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/img/slide-banner-02.jpg" alt="banner" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                    <img src="./uploads/<%= records[1].image[0].filename %>" alt="banner" data-bgfit="cover"
+                         data-bgposition="left top"
+                         data-bgrepeat="no-repeat">
 
                     <div
                             data-endspeed="500"
@@ -104,14 +111,16 @@
                             data-y="550"
                             data-x="177"
                             class="tp-caption sfb donate-button">
-                        <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn-link">Donate NOW</a>
+                        <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn-link">Donate
+                            NOW</a>
                     </div>
 
                 </li>
                 <!-- SLIDE  -->
                 <li data-transition="random" data-slotamount="7" data-masterspeed="500" class="slide-3">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/img/slide-banner-03.jpg" alt="banner" data-bgfit="cover" data-bgposition="center 36%" data-bgrepeat="no-repeat">
+                    <img src="./uploads/<%= records[4].image[0].filename %>" alt="banner" data-bgfit="cover"
+                         data-bgposition="center 36%" data-bgrepeat="no-repeat">
 
                     <div
                             data-endspeed="500"
@@ -145,7 +154,8 @@
                             data-x="152"
                             class="tp-caption sft third-style banner-summary banner-description">
                         <p>
-                            Become volunteer and start donating for those, who are unable to get education that they deserve. Give your full support to make their career.
+                            Become volunteer and start donating for those, who are unable to get education that they
+                            deserve. Give your full support to make their career.
                         </p>
                     </div>
 
@@ -157,7 +167,8 @@
                             data-y="354"
                             data-x="152"
                             class="tp-caption sft banner-btn">
-                        <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">Donate NOW</a>
+                        <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">Donate
+                            NOW</a>
                     </div>
                 </li>
             </ul>
@@ -170,7 +181,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-header section-header clearfix">
-                        <h2>Help multifarious people with your little donation. <strong> Go Through Our Causes</strong></h2>
+                        <h2>Help multifarious people with your little donation. <strong> Go Through Our Causes</strong>
+                        </h2>
                     </div>
 
                     <div class="article-list flexslider article-slider progressbar">
@@ -180,19 +192,23 @@
                                     <h3 class="h6">Help African Children Get Their Own Homes</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-01.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="72"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">72% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        Improve living style of people, who are affected by several health issues & poverty and unable to come out this situation.
+                                        Improve living style of people, who are affected by several health issues &
+                                        poverty and unable to come out this situation.
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -200,19 +216,23 @@
                                     <h3 class="h6">Make Girls Educated To Aid Them Earn Reputed Position</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-02.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">60% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        Give an opportunity to girls to become educated, so that, they can stand with boys and get a self exposure worldwide.
+                                        Give an opportunity to girls to become educated, so that, they can stand with
+                                        boys and get a self exposure worldwide.
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -220,19 +240,23 @@
                                     <h3 class="h6">Help us to send Vegetables to Africa</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-03.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">80% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        You can offer your support by sending vegetables that we can further send to these children in Africa
+                                        You can offer your support by sending vegetables that we can further send to
+                                        these children in Africa
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -240,19 +264,23 @@
                                     <h3 class="h6">Help African Children Get Their Own Homes</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-01.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="72"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">72% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        Improve living style of people, who are affected by several health issues & poverty and unable to come out this situation.
+                                        Improve living style of people, who are affected by several health issues &
+                                        poverty and unable to come out this situation.
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -260,19 +288,23 @@
                                     <h3 class="h6">Make Girls Educated To Aid Them Earn Reputed Position</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-02.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">60% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        Give an opportunity to girls to become educated, so that, they can stand with boys and get a self exposure worldwide.
+                                        Give an opportunity to girls to become educated, so that, they can stand with
+                                        boys and get a self exposure worldwide.
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -280,19 +312,23 @@
                                     <h3 class="h6">Help us to send Vegetables to Africa</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-03.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">80% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        You can offer your support by sending vegetables that we can further send to these children in Africa
+                                        You can offer your support by sending vegetables that we can further send to
+                                        these children in Africa
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -300,19 +336,23 @@
                                     <h3 class="h6">Help African Children Get Their Own Homes</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-01.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="72"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">72% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        Improve living style of people, who are affected by several health issues & poverty and unable to come out this situation.
+                                        Improve living style of people, who are affected by several health issues &
+                                        poverty and unable to come out this situation.
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -320,19 +360,23 @@
                                     <h3 class="h6">Make Girls Educated To Aid Them Earn Reputed Position</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-02.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">60% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        Give an opportunity to girls to become educated, so that, they can stand with boys and get a self exposure worldwide.
+                                        Give an opportunity to girls to become educated, so that, they can stand with
+                                        boys and get a self exposure worldwide.
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
                             <li>
@@ -340,19 +384,23 @@
                                     <h3 class="h6">Help us to send Vegetables to Africa</h3>
                                     <a href="#" class="img-thumb">
                                         <figure>
-                                            <img src="assets/img/img-slide-03.jpg" alt="">
+                                            <img src="./uploads/<%= records[1].image[0].filename %>" alt="">
                                         </figure>
                                     </a>
                                     <div class="progress">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
+                                             aria-valuemin="0" aria-valuemax="100">
                                             <span class="progress-value">80% </span>
                                         </div>
                                     </div>
-                                    <span class="donation">Donation : <span class="value">$78,354 <small>/ $1,26,500</small></span></span>
+                                    <span class="donation">Donation : <span
+                                                class="value">$78,354 <small>/ $1,26,500</small></span></span>
                                     <p>
-                                        You can offer your support by sending vegetables that we can further send to these children in Africa
+                                        You can offer your support by sending vegetables that we can further send to
+                                        these children in Africa
                                     </p>
-                                    <a data-toggle="modal" href="external.html" data-target=".donate-form" class="btn btn-default">DONATE NOW</a>
+                                    <a data-toggle="modal" href="external.html" data-target=".donate-form"
+                                       class="btn btn-default">DONATE NOW</a>
                                 </div>
                             </li>
 
@@ -377,29 +425,33 @@
                     <div class="row help-list">
                         <div class="col-xs-12 col-sm-6 col-lg-5">
                             <article class="media">
-                                <a class="pull-left warning-icon-box" href="our-story.ejs"><i class="icon-volume"></i></a>
+                                <a class="pull-left warning-icon-box" href="/our-story"><i class="icon-volume"></i></a>
                                 <div class="media-body less-width">
                                     <h3 class="media-heading">Media</h3>
                                     <p>
-                                        Donate money anywhere &amp; anytime to offer help in Africans through different medias.
+                                        Donate money anywhere &amp; anytime to offer help in Africans through different
+                                        medias.
                                     </p>
                                 </div>
                             </article>
                             <article class="media">
-                                <a class="pull-left warning-icon-box" href="volunteer/volunteer.ejs"><i class="icon-user"></i></a>
+                                <a class="pull-left warning-icon-box" href="/volunteer"><i class="icon-user"></i></a>
                                 <div class="media-body less-width">
                                     <h3 class="media-heading">Become Volunteer</h3>
                                     <p>
-                                        Take initiate to become a volunteer and help those people, who do not have any hope for good living.
+                                        Take initiate to become a volunteer and help those people, who do not have any
+                                        hope for good living.
                                     </p>
                                 </div>
                             </article>
                             <article class="media">
-                                <a class="pull-left warning-icon-box" href="external.html" data-toggle="modal" data-target=".donate-form"><i class="icon-heart"></i></a>
+                                <a class="pull-left warning-icon-box" href="external.html" data-toggle="modal"
+                                   data-target=".donate-form"><i class="icon-heart"></i></a>
                                 <div class="media-body less-width">
                                     <h3 class="media-heading">Send Donation</h3>
                                     <p>
-                                        Choose any medium either offline or online to send donation and aid NGOs to support people who are facing poverty.
+                                        Choose any medium either offline or online to send donation and aid NGOs to
+                                        support people who are facing poverty.
 
                                     </p>
                                 </div>
@@ -407,7 +459,8 @@
                         </div>
                         <div class="col-xs-12 col-sm-6 col-lg-6 col-lg-offset-1">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <img  src="assets/img/video-frame.jpg" alt="Click to play" data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1"/>
+                                <img src="./uploads/<%= records[2].image[0].filename %>" alt="Click to play"
+                                     data-video="http://www.youtube.com/embed/zP_D_YKnwi0?autoplay=1"/>
                             </div>
                         </div>
                     </div>
@@ -423,11 +476,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-7 col-md-5">
-                    <h2>Become <strong>Volunteer</strong></h2>
+                    <h2 class="bg-success">Become <strong>Volunteer</strong></h2>
                     <p>
-                        Spread the awareness of helping people, so that they can live a normal life in the society and educate their children that everyone deserves.
+                        Spread the awareness of helping people, so that they can live a normal life in the society and
+                        educate their children that everyone deserves.
                     </p>
-                    <a data-toggle="modal" href="external.html" data-target=".join-now-form" class="btn btn-default">Join Now</a>
+                    <a data-toggle="modal" href="external.html" data-target=".join-now-form" class="btn btn-bg">Join
+                        Now</a>
                 </div>
             </div>
         </div>
@@ -447,41 +502,49 @@
                         <div class="items zoom col-xs-12 col-sm-4">
                             <a href="#" class="img-thumb">
                                 <figure>
-                                    <img src="assets/img/img-slide-04.jpg" alt="">
+                                    <img src="./uploads/<%= records[4].image[0].filename %>" alt="">
                                 </figure>
                             </a>
                             <h3>Fund raising initiatives</h3>
                             <span class="date">03 DEC 2013</span><span class="posted-in">Posted In : category</span>
                             <p>
-                                Last month, fund raising initiatives were taken up and drives were launched to attract donations for the education of the underprivileged children. Many people participated in the event donated their heart out. We assure our sponsors and contributors that the money will surely bring a great difference in the lives of these children.
+                                Last month, fund raising initiatives were taken up and drives were launched to attract
+                                donations for the education of the underprivileged children. Many people participated in
+                                the event donated their heart out. We assure our sponsors and contributors that the
+                                money will surely bring a great difference in the lives of these children.
                             </p>
-                            <a href="blogs/blog-full-width.ejs" class="btn btn-default">READ MORE</a>
+                            <a href="blog-full-width" class="btn btn-default">READ MORE</a>
                         </div>
                         <div class="items zoom col-xs-12 col-sm-4">
                             <a href="#" class="img-thumb">
                                 <figure>
-                                    <img src="assets/img/img-slide-05.jpg" alt="">
+                                    <img src="./uploads/<%= records[4].image[0].filename %>" alt="">
                                 </figure>
                             </a>
                             <h3>Fundraising for African unprivileged children</h3>
                             <span class="date">03 DEC 2013</span><span class="posted-in">Posted In : category</span>
                             <p>
-                                We have been raising funds with great difficulty for the work that this charity does in Africa. We work in rural communities in Eastern Nigeria and other parts and provide funding for widows to build businesses in order for them to help themselves and stimulate the local economy.
+                                We have been raising funds with great difficulty for the work that this charity does in
+                                Africa. We work in rural communities in Eastern Nigeria and other parts and provide
+                                funding for widows to build businesses in order for them to help themselves and
+                                stimulate the local economy.
                             </p>
-                            <a href="blogs/blog-full-width.ejs" class="btn btn-default">READ MORE</a>
+                            <a href="blog-full-width" class="btn btn-default">READ MORE</a>
                         </div>
                         <div class="items zoom col-xs-12 col-sm-4">
                             <a href="#" class="img-thumb">
                                 <figure>
-                                    <img src="assets/img/img-slide-06.jpg" alt="">
+                                    <img src="./uploads/<%= records[4].image[0].filename %>" alt="">
                                 </figure>
                             </a>
                             <h3>Bringing Change in 2015</h3>
                             <span class="date">03 DEC 2013</span><span class="posted-in">Posted In : category</span>
                             <p>
-                                The year 2014 was a very exciting year for us and the first half of 2015 is proving to be the same. We have taken steps through the first half of this year to expand our influence throughout the United States and the Continent of Africa.
+                                The year 2014 was a very exciting year for us and the first half of 2015 is proving to
+                                be the same. We have taken steps through the first half of this year to expand our
+                                influence throughout the United States and the Continent of Africa.
                             </p>
-                            <a href="blogs/blog-full-width.ejs" class="btn btn-default">READ MORE</a>
+                            <a href="blog-full-width" class="btn btn-default">READ MORE</a>
                         </div>
 
                     </div>
@@ -489,6 +552,7 @@
             </div>
         </div>
     </section>
+    S
     <!-- Latest News Section End Here -->
 
     <!--Testimonial Section Start Here -->
@@ -504,7 +568,9 @@
                                     <h2>Donation Holders say <strong> Read Below </strong></h2>
                                     <blockquote>
                                         <p>
-                                            “Most of the dimensions related to life of human and their their living condition are in trouble these days, so help them to take a voluntarily step.”
+                                            “Most of the dimensions related to life of human and their their living
+                                            condition are in trouble these days, so help them to take a voluntarily
+                                            step.”
                                         </p>
                                         <footer>
                                             <span>TONY VEDVIK</span>
@@ -518,7 +584,8 @@
                                     <h2>Donation Holders say <strong> Read Below</strong></h2>
                                     <blockquote>
                                         <p>
-                                            “Etiam imperdiet metus ut pretium gravida uisque et vestibulum lacus. Maecenas at lacinia lacus. ”
+                                            “Etiam imperdiet metus ut pretium gravida uisque et vestibulum lacus.
+                                            Maecenas at lacinia lacus. ”
                                         </p>
                                         <footer>
                                             <span>Jhony Waker</span>
@@ -532,7 +599,9 @@
                                     <h2>Donation Holders say <strong> Read Below</strong></h2>
                                     <blockquote>
                                         <p>
-                                            “Most of the dimensions related to life of human and their their living condition are in trouble these days, so help them to take a voluntarily step.”
+                                            “Most of the dimensions related to life of human and their their living
+                                            condition are in trouble these days, so help them to take a voluntarily
+                                            step.”
                                         </p>
                                         <footer>
                                             <span>TONY VEDVIK</span>

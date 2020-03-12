@@ -24,7 +24,7 @@ router.get("/register", function(req, res, next) {
   res.render("register");
 });
 
-router.get("/dashboard", function(req, res, next) {
+router.get("/", function(req, res, next) {
   Banners.countDocuments({}).exec((err,count)=>{
     Newss.countDocuments({}).exec((err,count_list)=>{
       Volunteers.countDocuments({}).exec((err,count_vol)=>{

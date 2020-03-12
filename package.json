@@ -6,10 +6,10 @@
     "start": "npm run prod",
     "server": "babel-node src/bin/www.js",
     "server:prod": "node ./dist/bin/www",
-    "dev": "NODE_ENV=development npm-run-all server",
+    "dev": "NODE_ENV=development & npm-run-all server",
     "clean": "rimraf dist",
     "build": "babel ./src --out-dir dist --copy-files",
-    "prod": "NODE_ENV=production npm-run-all clean build server:prod",
+    "prod": "NODE_ENV=production & npm-run-all clean build server:prod",
     "watch": "nodemon"
   },
   "dependencies": {

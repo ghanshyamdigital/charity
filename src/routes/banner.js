@@ -48,7 +48,7 @@ router.post('/add',upload, (req, res, next) => {
     });
 
     Banner.save().then((data) => {
-        res.redirect('/banners');
+        res.redirect('/admin/banners');
     }, (e) => {
         res.status(400).send(e)
     });
@@ -110,7 +110,7 @@ router.post('/edit/:id',upload, function(req, res, next) {
     var edit= Banners.findByIdAndUpdate(id,dataRecords);
     edit.exec(function(err,data){
         if(err) throw err;
-        res.redirect('/banners');
+        res.redirect('/admin/banners');
     });
 
 });
@@ -122,7 +122,7 @@ router.get('/delete/:id', (req, res) => {
         (err, banner) => {
             // Handle any possible database errors
             if (err) return res.status(500).send(err);
-            return res.redirect('/banners')
+            return res.redirect('/admin/banners')
         }
     )
 });

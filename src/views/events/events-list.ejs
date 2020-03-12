@@ -5,7 +5,7 @@
         <div class="card-tools">
             <ul class="nav nav-pills ml-auto">
                 <li class="nav-item">
-                    <a class="btn btn-success" href="/events/add">Add</a>
+                    <a class="btn btn-success" href="/admin/events/add">Add</a>
                 </li>
             </ul>
         </div>
@@ -16,10 +16,10 @@
             <thead>
             <tr>
                 <th>Event Name</th>
-                <th>Vanue</th>
+                <th>Venue</th>
+                <th>Banner Image</th>
                 <th>Date</th>
                 <th>Image</th>
-                <th>Time</th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -30,16 +30,19 @@
                     <tr>
 
                         <td><%= row.event_name %></td>
-                        <td><%= row.vanue %></td>
-                        <td><%= row.date %></td>
+                        <td><%= row.venue %></td>
                         <td>
                             <% if(row.image[0]){ %>
-                                <img src="./uploads/<%= row.image[0].filename %>" alt="profile image" width="80">
+                                <img src="../uploads/<%= row.image[0].filename %>" alt="profile image" width="80">
+                            <% } %></td>
+                        <td><%= row.date %></td>
+                        <td>
+                            <% if(row.image[1]){ %>
+                                <img src="../uploads/<%= row.image[1].filename %>" alt="profile image" width="80">
                             <% } %>
                         </td>
-                        <td><%= row.time %></td>
-                        <td><a class="btn btn-primary btn-xs" href="/events/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-danger btn-xs" href="/events/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
+                        <td><a class="btn btn-primary btn-xs" href="/admin/events/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this item?');" href="/admin/events/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
             <% })}else{ %>

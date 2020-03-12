@@ -63,7 +63,7 @@ router.get('/delete/:id', (req, res) => {
         (err, banner) => {
             // Handle any possible database errors
             if (err) return res.status(500).send(err);
-            return res.redirect('/volunteers')
+            return res.redirect('/admin/volunteers')
         }
     )
 });
@@ -108,7 +108,7 @@ router.post('/edit/:id',upload, function(req, res, next) {
     var edit= Volunteers.findByIdAndUpdate(id,dataRecords);
     edit.exec(function(err,data){
         if(err) throw err;
-        res.redirect('/volunteers');
+        res.redirect('/admin/volunteers');
     });
 });
 

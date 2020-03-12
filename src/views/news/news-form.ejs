@@ -5,7 +5,7 @@
         <div class="card-tools">
             <ul class="nav nav-pills ml-auto">
                 <li class="nav-item">
-                    <a class="btn btn-success" href="/news/add">Add</a>
+                    <a class="btn btn-success" href="/admin/news/add">Add</a>
                 </li>
             </ul>
         </div>
@@ -32,11 +32,11 @@
 
                         <td>
                             <% if(row.image[0]){ %>
-                                <img src="./uploads/<%= row.image[0].filename  %>" alt="profile image" width="80">
+                                <img src="../uploads/<%= row.image[0].filename  %>" alt="profile image" width="80">
                             <% } %></td>
 
-                        <td><a class="btn btn-primary btn-xs" href="/news/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-danger btn-xs" href="/news/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
+                        <td><a class="btn btn-primary btn-xs" href="/admin/news/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this item?');" href="/admin/news/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
             <% })}else{ %>

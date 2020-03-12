@@ -5,11 +5,12 @@
         <div class="card-tools">
             <ul class="nav nav-pills ml-auto">
                 <li class="nav-item">
-                    <a class="btn btn-success" href="/volunteers/add">Add Volunteer</a>
+                    <a class="btn btn-success" href="/admin/volunteers/add">Add Volunteer</a>
                 </li>
             </ul>
         </div>
     </div>
+
     <!-- /.card-header -->
     <div class="card-body">
         <table id="volunteer-list" class="table table-bordered table-striped">
@@ -40,21 +41,23 @@
                         <td><%= row.job_details %></td>
                         <td><%= row.why_you_join %></td>
                         <td><% if(row.image[0]){ %>
-                                <img src="./uploads/<%= row.image[0].filename  %>" alt="profile image" width="80">
+                                <img src="../uploads/<%= row.image[0].filename  %>" alt="profile image" width="80">
                             <% } %></td>
-                        <td><a class="btn btn-primary btn-xs" href="/volunteers/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-danger btn-xs" href="/volunteers/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
+                        <td><a class="btn btn-primary btn-xs" href="/admin/volunteers/edit/<%= row._id %>"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete this item?');" href="/admin/volunteers/delete/<%= row._id %>"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
             <% })}else{ %>
                 <tr>
                     <td colspan="6">No Record Found</td>
-
                 </tr>
             <% } %>
+
             </tfoot>
+
         </table>
     </div>
     <!-- /.card-body -->
 </div>
 <!-- /.card -->
+

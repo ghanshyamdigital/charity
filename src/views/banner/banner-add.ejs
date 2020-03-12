@@ -42,7 +42,8 @@
                     minlength: 5
                 },
                 bannerImage: {
-                    required: "Please select a banner image",
+                    required: true,
+                    minlength: 3
                 },
             },
             messages: {
@@ -54,6 +55,11 @@
                     required: "Please provide a text",
                     minlength: "Your text must be at least 5 characters long"
                 },
+                bannerImage: {
+                    required: "Please provide a image",
+                    minlength: "Your select must be at least 3 image"
+
+                }
 
             },
             errorElement: 'span',

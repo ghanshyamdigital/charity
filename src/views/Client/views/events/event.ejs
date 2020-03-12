@@ -1,332 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<%- include ../layouts/head.ejs%>
+<head>
+    <%- include ../layouts/head.ejs %>
 
 
-	</head>
-	<body>
+</head>
+<body>
 
-		<div id="wrapper">
-			<!--Header Section Start Here -->
-			<%- include ../layouts/Header.ejs%>
-			<!-- Header Section End Here -->
+<div id="wrapper">
+    <!--Header Section Start Here -->
+    <%- include ../layouts/Header.ejs %>
+    <!-- Header Section End Here -->
 
-			<!-- site content -->
-			<div id="main">
-				<!--Breadcrumb Section Start Here-->
-				<div class="breadcrumb-section">
-					<div class="container">
-						<div class="row">
-							<div class="col-xs-12">
-								<h1>Event</h1>
-								<ul class="breadcrumb">
-									<li>
-										<a href="/">Home</a>
-									</li>
-									<li class="active">
-										Event
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--Breadcrumb Section End Here-->
+    <!-- site content -->
+    <div id="main">
+        <!--Breadcrumb Section Start Here-->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h1>Event</h1>
+                        <ul class="breadcrumb">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="active">
+                                Event
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breadcrumb Section End Here-->
 
-				<div class="cause-page content-wrapper" id="page-info">
-					<div class="container">
+        <div class="cause-page content-wrapper" id="page-info">
+            <div class="container">
 
-						<!-- our causes detail-->
+                <!-- our causes detail-->
+                <% if(data.length > 0) { %>
+                    <% data.forEach(function (row) {
+                    %>
+                        <div class="anim-section">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-9 left-block event_page">
 
-						<div class="anim-section">
-							<div class="row">
-								<div class="col-xs-12 col-sm-9 left-block event_page">
+                                    <div class="event_detail">
+                                        <figure>
+                                            <img src="../uploads/<%= row.image[1].filename %>" alt="img_container"/>
+                                        </figure>
+                                        <div class="event_date">
+                                            <!--											<strong>10</strong> <span>May</span>-->
+                                        </div>
+                                    </div>
 
-									<div class="event_detail">
-										<figure>
-											<img src="../../../../../assets/img/img_container.jpg" alt="img_container"/>
-										</figure>
-										<div class="event_date">
-											<strong>10</strong> <span>May</span>
-											 
-										</div>
-									</div>
-									
-									    <div class="event_heading clearfix">
-										       <h2><a href="#">Dance Marathon event for fundraising</a></h2>
-										       <div class="event_time clearfix">
-											       <div class="venue_block">
-											       		<div class="location-svg">
-											       			<img src="../../../../../assets/svg/location.svg" alt="" class="svg"/>
-											       		</div>
-										                <span>venue :</span> 
-										                <strong>Name Here</strong>
-									                 </div>
-									                 
-									                  <div class="date_block">
-									                  	<div class="date-svg">
-									                  		<img src="../../../../../assets/svg/calendar.svg" alt="" class="svg"/>
-									                  	</div>
-										                <span>date :</span> 
-										                <strong>10-05-2015</strong>
-									                 </div>
-									                 
-									                  <div class="time_block">
-									                  	<div class="time-svg">
-									                  		<img src="../../../../../assets/svg/timer.svg" alt="" class="svg" />
-									                  	</div>
-										                <span>Time :</span> 
-										                <strong>10 PM</strong>
-									                 </div>
-									              </div>   
-									              <div class="event_descriptions">
-									                 <p>Hundreds of teens participated in a Dance Marathon held Saturday, May 16, 5:00 p.m. - Midnight at Niles North High School, 9800 North Lawler Street, Skokie, IL. The Dance Marathon culminated a year-long series of fundraising efforts held throughout the country.
-                                                      </p>
-                                                      
-                                                      
-                                                     <a href="event-details.ejs" class="btn btn-default">Read More</a>
-                                                       </div>  
-                                                  </div>
-                                                  
-                                                    
-                                                  
-                                                  <div class="event_info">
-                                                  <div class="event_detail  ">
-										<figure>
-											<img src="../../../../../assets/img/img_container.jpg" alt="img_container"/>
-										</figure>
-										<div class="event_date">
-											<strong>10</strong> <span>May</span>
-											 
-										</div>
-									</div>
-									
-									    <div class="event_heading clearfix">
-										       <h2><a href="#">Cycle Racing Event</a></h2>
-										       <div class="event_time clearfix">
-											       <div class="venue_block">
-										                <span>venue :</span> 
-										                <strong>Name Here</strong>
-									                 </div>
-									                 
-									                  <div class="date_block">
-										                <span>date :</span> 
-										                <strong>10-05-2015</strong>
-									                 </div>
-									                 
-									                  <div class="time_block">
-										                <span>Time :</span> 
-										                <strong>10 PM</strong>
-									                 </div>
-									              </div>   
-									              
-									              
-									              
-									              
-									              <div class="event_descriptions">
-									                 <p>We will be heading through the Wicklow Mountains National Park and seeing many of the historic sights on our journey. 450 miles through 3 countries in five days.  Cycling along the coast of North Wales through the Wicklow Mountains National Park and past some of Ireland’s most famous landmarks including Dublin Castle and St Johns Castle in Limerick.
-                                                      </p>
-                                                      
-                                                      
-                                                     <a href="event-details.ejs" class="btn btn-default">Read More</a>
-                                                  </div>
-                                              </div>
-                                              </div>
-                                              
-                                              
-                                              
-                                                     
-                                                  
-                                                  <div class="event_video">
-                                                  <div class="video  ">
-                                                  	 
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/51eZ2IIPNas" allowfullscreen > </iframe>
-										</div>
-									 
-									 
-									
-									    <div class="event_heading clearfix">
-										       <h2><a href="#">Volunteering for better life for children in Africa</a></h2>
-										       <div class="event_time clearfix">
-											       <div class="venue_block">
-										                <span>venue :</span> 
-										                <strong>Name Here</strong>
-									                 </div>
-									                 
-									                  <div class="date_block">
-										                <span>date :</span> 
-										                <strong>10-05-2015</strong>
-									                 </div>
-									                 
-									                  <div class="time_block">
-										                <span>Time :</span> 
-										                <strong>10 PM</strong>
-									                 </div>
-									              </div>   
-									              
-									              
-									              
-									              
-									              <div class="event_descriptions">
-									                 <p>Many underprivileged children in Africa have limited opportunity for sporting activities, necessary for physical development and important in learning social and life skills. You can put to use your sporting skills and passion to change these kids’ lives and ensure a better future for them.
-                                                      </p>
-                                                      
-                                                      
-                                                     <a href="event-details.ejs" class="btn btn-default">Read More</a>
-                                                  </div>
-                                              </div>
-                                         </div>
-                                     
-								</div>
-                              
-								<div class="col-xs-12 col-sm-3 left-block ">
-									<aside class="media">
-										<h3 class="space-top">Most Popular Events</h3>
-										<ul>
-											<li>
-												<a href="event-details.ejs" class="pull-left">
-													<figure>
-													<img src="../../../../../assets/img/aside-img-01.jpg" alt="" />
-													</figure>
-													</a>
-												<div class="media-body">
-													<p>
-														<a href="event-details.ejs">
-														Fusce mauris enim faci lisis sceler
-														</a>
-													</p>
-													<span> 23, March?14 </span>
-												</div>
-											</li>
+                                    <div class="event_heading clearfix">
+                                        <h2><a href="#"><%= row.event_name %></a></h2>
+                                        <div class="event_time clearfix">
+                                            <div class="venue_block">
+                                                <div class="location-svg">
+                                                    <img src="../../../../../assets/svg/location.svg" alt=""
+                                                         class="svg"/>
+                                                </div>
+                                                <span>venue :</span>
+                                                <strong><%= row.venue %></strong>
+                                            </div>
 
-											<li>
-												<a href="event-details.ejs" class="pull-left">
-													<figure>
-													<img src="../../../../../assets/img/aside-img-02.jpg" alt="" />
-													</figure>
-													</a>
-												<div class="media-body">
-													<p>
-														<a href="event-details.ejs">
-														Mauris enim faci lisis sceler isque non
-														</a>
-													</p>
-													<span> 23, March?14 </span>
-												</div>
-											</li>
+                                            <div class="date_block">
+                                                <div class="date-svg">
+                                                    <img src="../../../../../assets/svg/calendar.svg" alt=""
+                                                         class="svg"/>
+                                                </div>
+                                                <span>date :</span>
+                                                <strong><%= moment(row.date).format('DD-MM-YYYY') %></strong>
+                                            </div>
 
-											<li>
-												<a href="event-details.ejs" class="pull-left">
-													<figure>
-													<img src="../../../../../assets/img/aside-img-03.jpg" alt="" />
-													</figure>
-													</a>
-												<div class="media-body">
-													<p>
-														<a href="event-details.ejs">
-														Enim faci lisis sceler isque nonmauris
-														</a>
-													</p>
-													<span> 23, March?14 </span>
-												</div>
-											</li>
-										</ul>
+                                            <div class="time_block">
+                                                <div class="time-svg">
+                                                    <img src="../../../../../assets/svg/timer.svg" alt="" class="svg"/>
+                                                </div>
+                                                <span>Time :</span>
+                                                <strong><%= moment(row.date).format('LT') %></strong>
+                                            </div>
+                                        </div>
+                                        <div class="event_descriptions">
+                                            <p>Hundreds of teens participated in a Dance Marathon held
+                                                <strong><%= moment(row.date).format('LLLL') %></strong> - Midnight at
+                                                Niles North High School, 9800 North Lawler Street, Skokie, IL. The Dance
+                                                Marathon culminated a year-long series of fundraising efforts held
+                                                throughout the country.
+                                            </p>
 
-									</aside>
 
-									<!-- Archives   -->
-									<aside class="media">
-										<h3>Archives</h3>
-										<ul class="archives">
-											<li>
-												<a href="#">
-												March 2013 <span class="pull-right">(12)</span>
-												</a>
-											</li>
-											<li>
-												<a href="#">
-												February 2013 <span class="pull-right">(12)</span>
-												</a>
-											</li>
-											<li><a href="#">
-												January 2013 <span class="pull-right">(43)</span>
-											</a>
-											</li>
-											<li><a href="#">
-												December 2012 <span class="pull-right">(12)</span>
-											</a>
-											</li>
-											<li>
-												<a href="#">
-												November 2012 <span class="pull-right">(32)</span>
-												</a>
-											</li>
-										</ul>
-									</aside>
+                                            <a href="/<%= row._id %>" class="btn btn-default">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 left-block ">
+                                    <aside class="media">
+                                        <h3 class="space-top">Most Popular Events</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="event-details.html" class="pull-left">
+                                                    <figure>
+                                                        <img src="../uploads/<%= data[0].image[0].filename %>"
+                                                             alt=""/>
+                                                    </figure>
+                                                </a>
+                                                <div class="media-body">
+                                                    <p>
+                                                        <a href="event-details.html">
+                                                            Fusce mauris enim faci lisis sceler
+                                                        </a>
+                                                    </p>
+                                                    <span> 23, March?14 </span>
+                                                </div>
+                                            </li>
 
-									<!-- Tags -->
-									<aside class="media">
-										<h3>Tags</h3>
-										<ul class="archives tag_element clearfix">
-											<li>
-												<a href="#">tag One </a>
-											</li>
-											<li>
-													<a href="#">  tag heaing </a>
-										 </li>
-											<li>
-												 	<a href="#"  > tag </a>
-											</li>
-											<li>
-												<a href="#"> tag title heaing	 </a>
-											 </li>
-											<li>
-													<a href="#">  tag two </a>
-										   </li>
-											<li>
-												 	<a href="#" > tag </a>
-											</li>
-											<li>
-												<a href="#"> ag One	 </a>
-											 </li>
-											<li>
-													<a href="#">  tag heaing </a>
-										    </li>
-											<li>
-												 	<a href="#" > tag </a>
-											</li>
-										 
+                                            <li>
+                                                <a href="event-details.html" class="pull-left">
+                                                    <figure>
+                                                        <img src="../uploads/<%= data[0].image[0].filename %>" alt=""/>
+                                                    </figure>
+                                                </a>
+                                                <div class="media-body">
+                                                    <p>
+                                                        <a href="event-details.html">
+                                                            Mauris enim faci lisis sceler isque non
+                                                        </a>
+                                                    </p>
+                                                    <span> 23, March?14 </span>
+                                                </div>
+                                            </li>
 
-										</ul>
-									</aside>
+                                            <li>
+                                                <a href="event-details.html" class="pull-left">
+                                                    <figure>
+                                                        <img src="../uploads/<%= data[0].image[0].filename %>" alt=""/>
+                                                    </figure>
+                                                </a>
+                                                <div class="media-body">
+                                                    <p>
+                                                        <a href="event-details.html">
+                                                            Enim faci lisis sceler isque nonmauris
+                                                        </a>
+                                                    </p>
+                                                    <span> 23, March?14 </span>
+                                                </div>
+                                            </li>
+                                        </ul>
 
-								 
-								</div>
-							</div>
+                                    </aside>
 
-						</div>
- 
-						<!-- our causes detail-->
+                                    <!-- Archives   -->
+                                    <aside class="media">
+                                        <h3>Archives</h3>
+                                        <ul class="archives">
+                                            <li>
+                                                <a href="#">
+                                                    March 2013 <span class="pull-right">(12)</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    February 2013 <span class="pull-right">(12)</span>
+                                                </a>
+                                            </li>
+                                            <li><a href="#">
+                                                    January 2013 <span class="pull-right">(43)</span>
+                                                </a>
+                                            </li>
+                                            <li><a href="#">
+                                                    December 2012 <span class="pull-right">(12)</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    November 2012 <span class="pull-right">(32)</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </aside>
 
-					</div>
- 
-				</div>
+                                    <!-- Tags -->
+                                    <aside class="media">
+                                        <h3>Tags</h3>
+                                        <ul class="archives tag_element clearfix">
+                                            <li>
+                                                <a href="#">tag One </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag heaing </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag title heaing </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag two </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> ag One </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag heaing </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> tag </a>
+                                            </li>
 
-			</div>
-			<!-- site content ends -->
 
-			<!--Footer Section Start Here -->
-			<%- include ../layouts/Footer.ejs%>
-	<!--Footer Section End Here -->
-		</div>
+                                        </ul>
+                                    </aside>
 
-		<!-- donation form popup -->
 
-		<%- include ../donation/DonationDialog.ejs%>
-		<!-- donation form popup -->
+                                </div>
+                            </div>
 
-		<!-- Scripts are here -->
-		<%- include ../layouts/scripts.ejs%>
-	</body>
+                        </div>
+                <% })}else{ %>
+                    <div class="col-xs-12 col-md-8 col-md-offset-2 four-zero-four">
+
+
+                        <header class="page-header">
+                            <h2>NO EVENTS FOUNDS</h2>
+                            <!--									<p>-->
+                            <!--										The page you are looking for had an accident due to wrong URL, so try with right URL to reach at the target page.-->
+                            <!--									</p>-->
+                        </header>
+                        <a class="btn btn-default" href="/">BACK TO HOMEPAGE</a>
+
+                    </div>
+                <% } %>
+
+                <!-- our causes detail-->
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- site content ends -->
+
+    <!--Footer Section Start Here -->
+    <%- include ../layouts/Footer.ejs %>
+    <!--Footer Section End Here -->
+</div>
+
+<!-- donation form popup -->
+
+<%- include ../donation/DonationDialog.ejs %>
+<!-- donation form popup -->
+
+<!-- Scripts are here -->
+<%- include ../layouts/scripts.ejs %>
+</body>
 </html>

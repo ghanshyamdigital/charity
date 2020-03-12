@@ -11,7 +11,7 @@
                 </header>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" enctype="multipart/form-data"  action="/add">
+                <form role="form" method="post" enctype="multipart/form-data" >
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="form-group col-xs-12 col-sm-6">
@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group col-xs-12 col-sm-6">
                                 <label for="phone-join">Phone<span>*</span></label>
-                                <input type="text" name="phone" class="form-control" id="phone-join">
+                                <input type="text" maxlength="10" name="phone" class="form-control" id="phone-join">
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                                 <label for="exampleInputFile">Attach Image And Signature</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" name="image" id="image" multiple required>
+                                        <input type="file" class="custom-file-input" name="image" value="<%= records.image%>" id="image" multiple required>
                                         <label class="custom-file-label" for="image"></label>
                                     </div>
                                 </div>
