@@ -1,20 +1,17 @@
 import * as jwt from 'jsonwebtoken'
 import config from '../config/config.dev'
-import generator from 'generate-password'
 import User from '../models/admin/user'
 import md5 from 'md5'
 
 
 const bcrypt = require('bcryptjs');
-const controller = {}
- 
+const controller = {};
+
 controller.authenticate = async (req, res) => {
-console.log(req.body.email);
 
     try {
-        const user = await User.getUserByEmail(req.body.email) ;
-        console.log("userData",user);
-        
+        const user = await User.getUserByEmail(req.body.email);
+
         if (user === null) {
             return res.render("login", {msg: "invalid username and password."})
         }
@@ -27,10 +24,8 @@ console.log(req.body.email);
                 expires: new Date(Date.now() + expiration),
                 secure: false, // set to true if your using https
                 httpOnly: true,
-              });
-              console.log("cookies",res.cookie);
-              
-            res.redirect(302, '/dashboard');
+            });
+            res.redirect(302, '/admin');
         } else {
             return res.render("login", {msg: "invalid password."})
         }
@@ -66,8 +61,7 @@ controller.addUser = async (req, res) => {
         }
 
         const savedUser = await User.addUser(userToAdd, req.body.password);
-        console.log('Adding user...',savedUser);
-        res.redirect(302, '/login');
+        res.redirect(302, '/admin/login');
 
     } catch (err) {
     console.error(`Error in adding user- ${err}`);

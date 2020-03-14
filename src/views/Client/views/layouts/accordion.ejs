@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include head.ejs%>
+
+	</head>
+	<body>
+
+		<div id="wrapper">
+			<!--Header Section Start Here -->
+			<%- include Header.ejs%>
+			<!-- Header Section End Here -->
+			<!-- site content -->
+			<div id="main">
+				<!--Breadcrumb Section Start Here-->
+				<div class="breadcrumb-section">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<h1>Shortcode</h1>
+								<ul class="breadcrumb">
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li class="active">
+										Shortcode
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Breadcrumb Section End Here-->
+				<section class="content-wrapper container" id="page-info">
+					<div class="row shortcode-page">
+						<!-- Side NavBar Start Here -->
+						<div class="col-xs-12 col-md-3">
+							<nav class="side-nav">
+								<ul>
+									<li>
+										<a href="typography.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Typography</a>
+									</li>
+									<li>
+										<a href="tabs.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Tabs Shortcode</a>
+									</li>
+									<li class="active">
+										<a href="accordion.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Accordion/Toggle Box</a>
+									</li>
+									<li>
+										<a href="notification.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Notification Boxes</a>
+									</li>
+									<li>
+										<a href="slider-ranger.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Slider Ranger</a>
+									</li>
+									<li>
+										<a href="tables.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Table</a>
+									</li>
+									<li>
+										<a href="list-style.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>List style</a>
+									</li>
+									<li>
+										<a href="blockquote.ejs"><i class="fa fa-angle-double-right bullet-arrow"></i>Blockquote</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- Side NavBar End Here -->
+						<!-- Accordion Section Start Here -->
+						<div class="col-xs-12 col-md-9">accordion
+							<h2 class="h4 page-header">Accordion  Heading Title</h2>
+							<p>
+								Aenean mollis ultricies massa ac imperdifdg aecenas nulla dolor, accumsan id risus eu, dignissim elementum dsdf lum gravida dui eu sagittis fringilladf nean mollis ultricies massa ac imperdiet. Maecenas nulla dolor, accumsan id risus eu, digni dolo stibulum gravida dui eu sagittis fringilla.
+							</p>
+							<div class="bs-example">
+								<div class="panel-group" id="accordion">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> <i class="fa fa-plus-circle  fa-minus-circle toggel-icon"></i> First Section </a></h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<p>
+													Duis nec lorem ut magna varius tempor. Maecenas massa metus, ultrice  vitae convallis ut, cursus eu orci. Maecenas ornare,libero quis interdum volutpat, arcu mauris ullamcorper sem,ac bibendum massa dui sed nibh.
+												</p>
+												<p>
+													Mauris nec nisi non ante tempus fringilla.Arcu mauris ullamcorper sem, ac bibendum massa dui sed nibh.arcu ma uris ullamcorper sem, ac bibendum massa dui sed nibh.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"> <i class="fa fa-plus-circle toggel-icon"></i> Second Section </a></h4>
+										</div>
+										<div id="collapseTwo" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>
+													Duis nec lorem ut magna varius tempor. Maecenas massa metus, ultrice  vitae convallis ut, cursus eu orci.
+												</p>
+												<p>
+													Mauris nec nisi non ante tempus fringilla.Arcu mauris ullamcorper sem, ac bibendum massa dui sed nibh.arcu ma uris ullamcorper sem, ac bibendum massa dui sed nibh.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"> <i class="fa fa-plus-circle toggel-icon"></i> Third Section </a></h4>
+										</div>
+										<div id="collapseThree" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>
+													Duis nec lorem ut magna varius tempor. Maecenas massa metus, ultrice  vitae convallis ut, cursus eu orci. Maecenas ornare,libero quis interdum volutpat, arcu mauris ullamcorper sem,ac bibendum massa dui sed nibh.
+												</p>
+												<p>
+													Mauris nec nisi non ante tempus fringilla.Arcu mauris ullamcorper sem, ac bibendum massa dui sed nibh.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="bs-example">
+								<h3>Toggle </h3>
+								<div class="panel-group toggle-panel" id="accordion1">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion1" href="#collapse-I"> <i class="fa fa-plus-circle fa-minus-circle toggel-icon"></i> First Section </a></h4>
+										</div>
+										<div id="collapse-I" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<p>
+													Duis nec lorem ut magna varius tempor. Maecenas massa metus, ultrice  vitae convallis ut, cursus eu orci. Maecenas ornare,libero quis interdum volutpat, arcu mauris ullamcorper sem,ac bibendum massa dui sed nibh.
+												</p>
+												<p>
+													Mauris nec nisi non ante tempus fringilla.Arcu mauris ullamcorper sem, ac bibendum massa dui sed nibh.arcu ma uris ullamcorper sem, ac bibendum massa dui sed nibh.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion1" href="#collapse-II"> <i class="fa fa-plus-circle toggel-icon"></i> Second Section </a></h4>
+										</div>
+										<div id="collapse-II" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>
+													Duis nec lorem ut magna varius tempor. Maecenas massa metus, ultrice  vitae convallis ut, cursus eu orci.
+												</p>
+												<p>
+													Mauris nec nisi non ante tempus fringilla.Arcu mauris ullamcorper sem, ac bibendum massa dui sed nibh.arcu ma uris ullamcorper sem, ac bibendum massa dui sed nibh.
+												</p>
+											</div>
+										</div>
+									</div>
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion1" href="#collapse-III"> <i class="fa fa-plus-circle toggel-icon"></i> Third Section </a></h4>
+										</div>
+										<div id="collapse-III" class="panel-collapse collapse">
+											<div class="panel-body">
+												<p>
+													Duis nec lorem ut magna varius tempor. Maecenas massa metus, ultrice  vitae convallis ut, cursus eu orci. Maecenas ornare,libero quis interdum volutpat, arcu mauris ullamcorper sem,ac bibendum massa dui sed nibh.
+												</p>
+												<p>
+													Mauris nec nisi non ante tempus fringilla.Arcu mauris ullamcorper sem, ac bibendum massa dui sed nibh.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+						<!-- Accordion Section End Here -->
+					</div>
+
+				</section>
+
+			</div>
+			<!--Footer Section Start Here -->
+			<%- include Footer.ejs%>
+	<!--Footer Section End Here -->
+
+		</div>
+		<!-- Scripts are here -->
+		<%- include scripts.ejs%>
+	</body>
+</html>
