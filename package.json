@@ -28,7 +28,7 @@
     "fs": "0.0.1-security",
     "generate-password": "^1.5.1",
     "http-errors": "~1.6.3",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.2.1",
     "mongoose": "^5.8.11",
